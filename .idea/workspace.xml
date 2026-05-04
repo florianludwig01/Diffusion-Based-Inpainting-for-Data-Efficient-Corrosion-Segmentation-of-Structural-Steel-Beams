@@ -4,22 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/FastFlow/0126.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/FastFlow/FastFlow.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/FastFlow/Test_FastFlow.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/FastFlow/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/YOLO_seg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/utils/changing_class.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/utils/empty_masks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/utils/merge_YOLO_boxes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/utils/renaming.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/utils/split_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/04_Evaluation_Dataset.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/04_Evaluation_Dataset.iml" afterDir="false" />
+    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="YOLO training">
+      <change afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/YOLO_finetuning.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pixi.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pixi.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/04_evaluation_dataset/YOLO_seg.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/YOLO_seg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/04_evaluation_dataset/utils/merge_YOLO_boxes.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/utils/merge_YOLO_boxes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +43,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.FastFlow.executor": "Run",
     "Python.Test_FastFlow.executor": "Run",
+    "Python.YOLO_finetuning.executor": "Run",
     "Python.YOLO_seg.executor": "Run",
     "Python.changing_class.executor": "Run",
     "Python.empty_masks.executor": "Run",
@@ -99,10 +89,23 @@
       <option name="presentableId" value="Default" />
       <updated>1775817409533</updated>
     </task>
+    <task id="LOCAL-00001" summary="YOLO training">
+      <option name="closed" value="true" />
+      <created>1777295958326</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1777295958326</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="YOLO training" />
+    <option name="LAST_COMMIT_MESSAGE" value="YOLO training" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

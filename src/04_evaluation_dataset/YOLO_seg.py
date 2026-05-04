@@ -4,7 +4,7 @@ from pathlib import Path
 
 def main():
     root = Path(__file__).resolve().parents[3]
-    dataset_root = root / "03_Datasets" / "Combined_Rust"
+    dataset_root = root / "03_Datasets" / "Corrosion" / "Pretraining"
 
     data_yaml = dataset_root / "data.yaml"
     if not data_yaml.exists():
@@ -18,12 +18,12 @@ def main():
         workers=0,
         task="detect",
         imgsz=512,
-        epochs=150,
-        batch=8,
-        patience=30,
+        epochs=300,
+        batch=12,
+        patience=50,
         weight_decay=1e-3,
-        project=str(dataset_root / "26s"),
-        name="rust",
+        project=str(dataset_root / "YOLO"),
+        name="26s",
         exist_ok=True,
         degrees=10.0,  # Bild um ±10 Grad rotieren
         flipud=0.5,  # 50% Chance auf vertikales Spiegeln

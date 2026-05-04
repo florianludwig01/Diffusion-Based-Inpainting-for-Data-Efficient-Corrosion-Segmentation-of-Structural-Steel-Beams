@@ -76,13 +76,13 @@ def merge_yolo_boxes(input_folder, output_folder, threshold=0.05):
 if __name__ == "__main__":
     # Pfad-Logik basierend auf deiner Struktur
     root = Path(__file__).resolve().parents[4]  # Passt sich an deine src-Tiefe an
-    dataset_root = root / "03_Datasets" / "Combined_Rust"
+    dataset_root = root / "03_Datasets" / "Corrosion" / "Finetuning"
 
     # Verarbeitung für Train und Val
     for split in ["train", "val"]:
         print(f"Starte Merging für {split}...")
-        in_p = dataset_root / split / "labels_detailed"
-        out_p = dataset_root / split / "labels"
+        in_p = dataset_root / split / "labels"
+        out_p = dataset_root / split / "labels_new"
 
         merge_yolo_boxes(
             input_folder=in_p,
