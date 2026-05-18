@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="working on fastflow and patchcore">
-      <change afterPath="$PROJECT_DIR$/src/DINO/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DINO/predict_dinov2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DINO/train_dinov2.py" afterDir="false" />
+    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="added README">
+      <change afterPath="$PROJECT_DIR$/src/DINO/dinov2_rust_finetuned.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DINO/dinov2_rust_finetuned_reg.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +163,23 @@
       <option name="project" value="LOCAL" />
       <updated>1779109997727</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="working on transformer (DINOv2)">
+      <option name="closed" value="true" />
+      <created>1779113957012</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1779113957012</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added README">
+      <option name="closed" value="true" />
+      <created>1779114250605</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1779114250605</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,9 +192,11 @@
     <MESSAGE value="restructure to AnomaLib only" />
     <MESSAGE value="explanation of patchcore as comment" />
     <MESSAGE value="explanation of fastflow as comment" />
-    <MESSAGE value="added README" />
     <MESSAGE value="working on fastflow and patchcore" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on fastflow and patchcore" />
+    <MESSAGE value="working on transformer (DINOv2)" />
+    <MESSAGE value="finetuned DINO models for corrosion (not working)" />
+    <MESSAGE value="added README" />
+    <option name="LAST_COMMIT_MESSAGE" value="added README" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
