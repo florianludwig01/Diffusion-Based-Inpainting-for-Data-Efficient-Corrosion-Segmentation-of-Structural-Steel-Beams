@@ -3,8 +3,8 @@ from pathlib import Path
 
 
 def main():
-    root = Path(__file__).resolve().parents[3]
-    dataset_root = root / "03_Datasets" / "Corrosion" / "Pretraining"
+    root = Path(__file__).resolve().parents[4]
+    dataset_root = root / "03_Datasets" / "03_synthetische_Datensatz" / "01_welds"
 
     data_yaml = dataset_root / "data.yaml"
     if not data_yaml.exists():
@@ -18,12 +18,12 @@ def main():
         workers=0,
         task="detect",
         imgsz=512,
-        epochs=300,
-        batch=12,
+        epochs=50,
+        batch=2,
         patience=50,
         weight_decay=1e-3,
         project=str(dataset_root / "YOLO"),
-        name="26s",
+        name="26n",
         exist_ok=True,
         degrees=10.0,  # Bild um ±10 Grad rotieren
         flipud=0.5,  # 50% Chance auf vertikales Spiegeln

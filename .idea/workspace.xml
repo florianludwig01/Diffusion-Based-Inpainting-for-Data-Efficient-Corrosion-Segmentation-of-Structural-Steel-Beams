@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="YOLO training">
-      <change afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/YOLO_finetuning.py" afterDir="false" />
+    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="YOLO finetuning">
+      <change afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/YOLO/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/YOLO/video_prediction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/utils/convert_to_txt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/04_evaluation_dataset/YOLO_seg.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/YOLO_seg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/04_evaluation_dataset/utils/merge_YOLO_boxes.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/utils/merge_YOLO_boxes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/04_evaluation_dataset/FastFlow/FastFlow.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/FastFlow/FastFlow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/04_evaluation_dataset/FastFlow/Test_FastFlow.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/FastFlow/Test_FastFlow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/04_evaluation_dataset/YOLO_finetuning.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/YOLO/YOLO_finetuning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/04_evaluation_dataset/YOLO_seg.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/YOLO/YOLO_seg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/04_evaluation_dataset/utils/split_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/04_evaluation_dataset/utils/split_data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,46 +43,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.FastFlow.executor": "Run",
-    "Python.Test_FastFlow.executor": "Run",
-    "Python.YOLO_finetuning.executor": "Run",
-    "Python.YOLO_seg.executor": "Run",
-    "Python.changing_class.executor": "Run",
-    "Python.empty_masks.executor": "Run",
-    "Python.merge_YOLO_boxes.executor": "Run",
-    "Python.renaming.executor": "Run",
-    "Python.split_data.executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/04_Evaluation_Dataset/src/04_evaluation_dataset",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.FastFlow.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Test_FastFlow.executor&quot;: &quot;Run&quot;,
+    &quot;Python.YOLO_finetuning.executor&quot;: &quot;Run&quot;,
+    &quot;Python.YOLO_seg.executor&quot;: &quot;Run&quot;,
+    &quot;Python.changing_class.executor&quot;: &quot;Run&quot;,
+    &quot;Python.convert_to_txt.executor&quot;: &quot;Run&quot;,
+    &quot;Python.empty_masks.executor&quot;: &quot;Run&quot;,
+    &quot;Python.merge_YOLO_boxes.executor&quot;: &quot;Run&quot;,
+    &quot;Python.renaming.executor&quot;: &quot;Run&quot;,
+    &quot;Python.split_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.video_prediction.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/04_Evaluation_Dataset/src/04_evaluation_dataset&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/04_evaluation_dataset" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/04_evaluation_dataset/YOLO" />
       <recent name="$PROJECT_DIR$/src/04_evaluation_dataset/FastFlow" />
     </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-b63d5a1f7c97-b61e75351b1f-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.22158.340" />
+        <option value="bundled-python-sdk-024ed6589d45-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.23567.174" />
       </set>
     </attachedChunks>
   </component>
@@ -97,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777295958326</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="YOLO finetuning">
+      <option name="closed" value="true" />
+      <created>1777902312261</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1777902312261</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,13 +121,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="YOLO training" />
-    <option name="LAST_COMMIT_MESSAGE" value="YOLO training" />
+    <MESSAGE value="YOLO finetuning" />
+    <option name="LAST_COMMIT_MESSAGE" value="YOLO finetuning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/04_evaluation_dataset/YOLO_seg.py</url>
+          <url>file://$PROJECT_DIR$/src/04_evaluation_dataset/YOLO/YOLO_seg.py</url>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

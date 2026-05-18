@@ -15,7 +15,7 @@ def split_segmentation_dataset(root_path, split_ratio=0.8):
         (root_path / split / 'labels').mkdir(parents=True, exist_ok=True)
 
     # Alle Bilder finden
-    image_files = list(images_path.glob('*.jpeg'))  # oder .png
+    image_files = list(images_path.glob('*.png'))  # oder .png
     random.shuffle(image_files)
 
     split_idx = int(len(image_files) * split_ratio)
@@ -38,7 +38,7 @@ def split_segmentation_dataset(root_path, split_ratio=0.8):
         'path': str(dataset_root.resolve()),  # Absoluter Pfad für Stabilität
         'train': 'train/images',
         'val': 'val/images',
-        'names': {0: 'corrosion'}  # Hier ggf. weitere Klassen ergänzen
+        'names': {0: 'weld'}  # Hier ggf. weitere Klassen ergänzen
     }
 
     yaml_path = dataset_root / "data.yaml"
@@ -48,5 +48,5 @@ def split_segmentation_dataset(root_path, split_ratio=0.8):
     print(yaml_path)
 
 root = Path(__file__).resolve().parents[4]
-dataset_root = root / "03_Datasets" / "corrosion detect"
+dataset_root = root / "03_Datasets" / "03_synthetische_Datensatz" / "01_welds"
 split_segmentation_dataset(dataset_root, split_ratio=0.8)

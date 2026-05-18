@@ -1,33 +1,31 @@
 import torch
 from anomalib.engine import Engine
 from anomalib.data import Folder
-from anomalib.models import Fastflow
+from anomalib.models import Fastflow, Patchcore
 from pathlib import Path
 
 
-checkpoint_path = "/src/04_evaluation_dataset/FastFlow/results/Fastflow/weld/latest/weights/lightning/model.ckpt"
+checkpoint_path = "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/04_Evaluation_Dataset/src/04_evaluation_dataset/FastFlow/results/Patchcore/beam/v1/weights/lightning/model.ckpt"
 
 predict_image_dir = "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/test/"
 
 datamodule = Folder(
     name="prediction",
-    root="/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/synthetic_welds_steelbeems/",
-    normal_dir="train/real",
+    root="/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/test/",
+    normal_dir="rgb_images",
     normal_test_dir=predict_image_dir # Wir "täuschen" ein Testset vor
 )
 datamodule.setup()
 
-model = Fastflow(backbone="resnet18")
+# model = Fastflow(backbone="resnet18")
+model = Patchcore(backbone="wide_resnet50_2")
 
 engine = Engine(
-    pixel_metrics=None,  # Wir brauchen keine Metriken für reine Vorhersage
-    image_metrics=None,
-    normalization="min_max", # WICHTIG: Damit die Heatmaps nicht "blau" bleiben
-    visualization_settings={
-        "mode": "full",      # Speichert Original, Heatmap und Overlay
-        "save_images": True,
-        "show_images": False
-    }
+    max_epochs=50,
+    accelerator="gpu",
+    devices=1,
+    limit_val_batches=0,
+    limit_predict_batches=None,
 )
 
 # Vorhersage starten
