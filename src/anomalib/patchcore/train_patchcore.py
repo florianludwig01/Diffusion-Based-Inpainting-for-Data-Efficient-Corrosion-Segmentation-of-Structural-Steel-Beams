@@ -23,10 +23,6 @@ datamodule = Folder(
     # mask_dir="GT_masks",
 )
 
-# model = Fastflow(
-#     backbone="resnet18",
-#     flow_steps=8,
-# )
 model = Patchcore(backbone="wide_resnet50_2")
 model.image_metrics = [
     AUROC(fields=["pred_score", "label"]),

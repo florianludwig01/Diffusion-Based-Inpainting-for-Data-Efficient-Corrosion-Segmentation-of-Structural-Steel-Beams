@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="explanation of patchcore as comment" />
+    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="explanation of fastflow as comment">
+      <change beforePath="$PROJECT_DIR$/.idea/04_Evaluation_Dataset.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/04_Evaluation_Dataset.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/anomalib/patchcore/train_patchcore.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/anomalib/patchcore/train_patchcore.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,6 +50,7 @@
     "Python.merge_YOLO_boxes.executor": "Run",
     "Python.renaming.executor": "Run",
     "Python.split_data.executor": "Run",
+    "Python.train_patchcore.executor": "Run",
     "Python.video_prediction.executor": "Run",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -129,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779095562288</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="explanation of fastflow as comment">
+      <option name="closed" value="true" />
+      <created>1779095699855</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1779095699855</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,7 +154,8 @@
     <MESSAGE value="testing YOLO and AnomaLib" />
     <MESSAGE value="restructure to AnomaLib only" />
     <MESSAGE value="explanation of patchcore as comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="explanation of patchcore as comment" />
+    <MESSAGE value="explanation of fastflow as comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="explanation of fastflow as comment" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
