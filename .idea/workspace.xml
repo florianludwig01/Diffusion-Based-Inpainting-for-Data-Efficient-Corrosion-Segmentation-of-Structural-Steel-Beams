@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="added README">
+    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="working on fastflow and patchcore">
+      <change afterPath="$PROJECT_DIR$/src/DINO/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DINO/predict_dinov2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DINO/train_dinov2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/anomalib/fastflow/test_fastflow.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/anomalib/fastflow/test_fastflow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/anomalib/fastflow/train_fastflow.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/anomalib/fastflow/train_fastflow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/anomalib/patchcore/test_patchcore.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/anomalib/patchcore/test_patchcore.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/anomalib/patchcore/train_patchcore.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/anomalib/patchcore/train_patchcore.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +49,11 @@
     "Python.convert_to_txt.executor": "Run",
     "Python.empty_masks.executor": "Run",
     "Python.merge_YOLO_boxes.executor": "Run",
+    "Python.predict_dinov2.executor": "Run",
     "Python.renaming.executor": "Run",
     "Python.split_data.executor": "Run",
+    "Python.train_deit.executor": "Run",
+    "Python.train_dinov2.executor": "Run",
     "Python.train_fastflow.executor": "Run",
     "Python.train_patchcore.executor": "Run",
     "Python.video_prediction.executor": "Run",
@@ -61,7 +63,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "anomalib",
+    "git-widget-placeholder": "transformer",
     "last_opened_file_path": "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/04_Evaluation_Dataset/src/04_evaluation_dataset",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -153,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779099526202</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="working on fastflow and patchcore">
+      <option name="closed" value="true" />
+      <created>1779109997727</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1779109997727</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,7 +177,8 @@
     <MESSAGE value="explanation of patchcore as comment" />
     <MESSAGE value="explanation of fastflow as comment" />
     <MESSAGE value="added README" />
-    <option name="LAST_COMMIT_MESSAGE" value="added README" />
+    <MESSAGE value="working on fastflow and patchcore" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on fastflow and patchcore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
