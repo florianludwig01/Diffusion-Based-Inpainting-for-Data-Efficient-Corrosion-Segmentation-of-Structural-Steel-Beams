@@ -3,6 +3,9 @@ from anomalib.models import Fastflow, Patchcore
 from anomalib.engine import Engine
 from anomalib import TaskType
 from anomalib.metrics import AUROC, F1Score
+from pathlib import Path
+from torchvision.transforms.v2 import Compose, Resize, ToImage, ToDtype
+import torch
 
 '''
 FastFlow nutzt ein 2D-Normalizing-Flow-Netzwerk, um die Verteilung der Merkmale 
@@ -19,29 +22,41 @@ ORIGINAL PAPER:
 Link: https://arxiv.org/abs/2111.07677
 '''
 
+base_path = Path(__file__).resolve()
+dataset_root = "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/02_Literaturdatensaetze/steel beams/"
+results_dir = base_path.parent.parent.parent.parent / "results/"
+
+backbone = "deit_base_distilled_patch16_384" # also possible: cait_m48_448, deit_base_distilled_patch16_384, resnet18, wide_resnet50_2
+
+cait_transform = Compose([
+    Resize((448, 448), antialias=True),
+    ToImage(),
+    ToDtype(torch.float32, scale=True),
+])
+
 datamodule = Folder(
     name="beam",
-    root="/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/02_Literaturdatensaetze/steel beams/",
+    root=dataset_root,
     normal_dir="train_normal",
     abnormal_dir="test_abnormal",
     test_split_mode="from_dir",
+    augmentations=cait_transform,
     # mask_dir="GT_masks",
 )
 
-# model = Fastflow(
-#     backbone="resnet18",
-#     flow_steps=8,
-# )
-model = Patchcore(backbone="wide_resnet50_2")
-model.image_metrics = [
-    AUROC(fields=["pred_score", "label"]),
-    F1Score(fields=["pred_score", "label"])
-]
-
-# Pixel-Metriken explizit ausschalten
-model.pixel_metrics = None
+model = Fastflow(backbone=backbone)
+# model.image_metrics = [
+#     AUROC(fields=["pred_score", "label"]),
+#     F1Score(fields=["pred_score", "label"])
+# ]
+#
+# # Pixel-Metriken explizit ausschalten
+# model.pixel_metrics = None
+datamodule.image_size = (448, 448)
+model.model.input_size = (448, 448)
 
 engine = Engine(
+    default_root_dir=results_dir,
     max_epochs=50,
     accelerator="gpu",
     devices=1,

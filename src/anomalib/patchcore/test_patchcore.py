@@ -1,11 +1,11 @@
 import torch
 from anomalib.engine import Engine
 from anomalib.data import Folder
-from anomalib.models import Fastflow, Patchcore
+from anomalib.models import Patchcore
 from pathlib import Path
 
 
-checkpoint_path = "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/04_Evaluation_Dataset/src/04_evaluation_dataset/FastFlow/results/Patchcore/beam/v1/weights/lightning/model.ckpt"
+checkpoint_path = "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/04_Evaluation_Dataset/src/04_evaluation_dataset/Patchcore/results/Patchcore/beam/v1/weights/lightning/model.ckpt"
 
 predict_image_dir = "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/test/"
 
