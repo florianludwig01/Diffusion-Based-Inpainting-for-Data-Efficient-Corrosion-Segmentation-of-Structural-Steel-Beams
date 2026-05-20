@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # 1. SETUP
-IMG_SIZE = 448  # Muss durch 14 teilbar sein
+IMG_SIZE = 518  # Muss durch 14 teilbar sein
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-MODEL_PATH = "dinov2_rust_finetuned_reg.pth"
+MODEL_PATH = "dinov2_rust_finetuned_last2blocks.pth"
 
 
 # 2. MODELL LADEN
@@ -71,5 +71,5 @@ def predict(image_path):
 
 if __name__ == "__main__":
     # Dein Pfad
-    img_path = "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/01_eigener_Datensatz/Stahltraeger/rgb_images/0112.png"
+    img_path = "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/01_eigener_Datensatz/Stahltraeger/rgb_images/0090.png"
     predict(img_path)
