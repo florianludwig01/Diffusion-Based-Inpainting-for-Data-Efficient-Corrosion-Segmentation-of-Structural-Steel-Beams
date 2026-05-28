@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="added README">
-      <change afterPath="$PROJECT_DIR$/src/DINO/rust_feature_embedding.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/segFormer/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/segFormer/predict.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/segFormer/train.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DINO/predict_dinov2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/DINO/predict_dinov2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DINO/train_dinov2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/DINO/train_dinov2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,42 +35,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.FastFlow.executor": "Run",
-    "Python.Test_FastFlow.executor": "Run",
-    "Python.YOLO_finetuning.executor": "Run",
-    "Python.YOLO_seg.executor": "Run",
-    "Python.changing_class.executor": "Run",
-    "Python.convert_to_txt.executor": "Run",
-    "Python.empty_masks.executor": "Run",
-    "Python.merge_YOLO_boxes.executor": "Run",
-    "Python.predict.executor": "Run",
-    "Python.predict_dinov2.executor": "Run",
-    "Python.renaming.executor": "Run",
-    "Python.split_data.executor": "Run",
-    "Python.train.executor": "Run",
-    "Python.train_deit.executor": "Run",
-    "Python.train_dinov2.executor": "Run",
-    "Python.train_fastflow.executor": "Run",
-    "Python.train_patchcore.executor": "Run",
-    "Python.video_prediction.executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "transformer",
-    "last_opened_file_path": "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/04_Evaluation_Dataset/src/04_evaluation_dataset",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.FastFlow.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Test_FastFlow.executor&quot;: &quot;Run&quot;,
+    &quot;Python.YOLO_finetuning.executor&quot;: &quot;Run&quot;,
+    &quot;Python.YOLO_seg.executor&quot;: &quot;Run&quot;,
+    &quot;Python.changing_class.executor&quot;: &quot;Run&quot;,
+    &quot;Python.convert_to_txt.executor&quot;: &quot;Run&quot;,
+    &quot;Python.empty_masks.executor&quot;: &quot;Run&quot;,
+    &quot;Python.merge_YOLO_boxes.executor&quot;: &quot;Run&quot;,
+    &quot;Python.predict.executor&quot;: &quot;Run&quot;,
+    &quot;Python.predict_dinov2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.renaming.executor&quot;: &quot;Run&quot;,
+    &quot;Python.split_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_deit.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_dinov2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_fastflow.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_patchcore.executor&quot;: &quot;Run&quot;,
+    &quot;Python.video_prediction.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;transformer&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/04_Evaluation_Dataset/src/04_evaluation_dataset&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/04_evaluation_dataset" />
@@ -92,7 +86,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-024ed6589d45-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.23567.174" />
+        <option value="bundled-python-sdk-c59985aa861c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.24374.152" />
       </set>
     </attachedChunks>
   </component>
