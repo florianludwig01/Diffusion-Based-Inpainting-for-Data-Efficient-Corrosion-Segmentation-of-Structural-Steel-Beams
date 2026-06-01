@@ -15,7 +15,7 @@ from transformers import Dinov2Model
 # PFADANPASSUNG
 # =========================
 
-MODEL_PATH = "dinov2_rust_seg_best.pth"
+MODEL_PATH = "dinov2_rust_seg_x5_best.pth"
 
 TEST_DIR = "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/01_eigener_Datensatz/Validierung Rost"
 IMAGE_DIR = os.path.join(TEST_DIR, "images")
@@ -24,7 +24,7 @@ LABEL_DIR = os.path.join(TEST_DIR, "labels")
 OUTPUT_DIR = "dinov2_threshold_predictions"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-SUMMARY_CSV = "dinov2_threshold_sweep.csv"
+SUMMARY_CSV = "dinov2_x5_threshold_sweep.csv"
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

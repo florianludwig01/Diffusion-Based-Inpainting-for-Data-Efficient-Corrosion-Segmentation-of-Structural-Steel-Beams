@@ -2,8 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-DINO_CSV = "dinov2_threshold_sweep.csv"
-YOLO_CSV = "yolo_confidence_sweep.csv"
+DINO_CSV = "dinov2_x5_threshold_sweep.csv"
+YOLO_CSV = "yolo_confidence_sweep_x5.csv"
 
 dino = pd.read_csv(DINO_CSV)
 yolo = pd.read_csv(YOLO_CSV)
