@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/src/Foundation/comparison.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Foundation/yolo_confidence_sweep.csv" afterDir="false" />
+    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="comparison YOLO vs DINOv2 with decoder">
+      <change afterPath="$PROJECT_DIR$/src/Foundation/oversampling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foundation/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Foundation/comparison_dice.png" beforeDir="false" afterPath="$PROJECT_DIR$/results/comparison_dice.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Foundation/comparison_iou.png" beforeDir="false" afterPath="$PROJECT_DIR$/results/comparison_iou.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Foundation/comparison_precision.png" beforeDir="false" afterPath="$PROJECT_DIR$/results/comparison_precision.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Foundation/comparison_precision_recall.png" beforeDir="false" afterPath="$PROJECT_DIR$/results/comparison_precision_recall.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Foundation/comparison_recall.png" beforeDir="false" afterPath="$PROJECT_DIR$/results/comparison_recall.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Foundation/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foundation/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +54,7 @@
     "Python.convert_to_txt.executor": "Run",
     "Python.empty_masks.executor": "Run",
     "Python.merge_YOLO_boxes.executor": "Run",
+    "Python.oversampling.executor": "Run",
     "Python.predict.executor": "Run",
     "Python.predict_dinov2.executor": "Run",
     "Python.renaming.executor": "Run",
@@ -84,6 +89,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/results" />
       <recent name="$PROJECT_DIR$/src/anomalib/patchcore" />
       <recent name="$PROJECT_DIR$/src/anomalib/fastflow" />
       <recent name="$PROJECT_DIR$/src/04_evaluation_dataset/YOLO" />
@@ -193,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779981447226</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="comparison YOLO vs DINOv2 with decoder">
+      <option name="closed" value="true" />
+      <created>1780308707096</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1780308707096</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +225,8 @@
     <MESSAGE value="finetuned DINO models for corrosion (not working)" />
     <MESSAGE value="added README" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="comparison YOLO vs DINOv2 with decoder" />
+    <option name="LAST_COMMIT_MESSAGE" value="comparison YOLO vs DINOv2 with decoder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
