@@ -12,13 +12,13 @@ from pathlib import Path
 SYNTH_IMAGE_DIR = Path("/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/03_synthetische_Datensatz/03_rust/images")
 SYNTH_LABEL_DIR = Path("/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/03_synthetische_Datensatz/03_rust/labels")
 
-OUT_IMAGE_DIR = Path("/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/03_synthetische_Datensatz/03_rust/oversampled/images")
-OUT_LABEL_DIR = Path("/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/03_synthetische_Datensatz/03_rust/oversampled/labels")
+OUT_IMAGE_DIR = Path("/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/03_synthetische_Datensatz/03_rust/oversampledx10/images")
+OUT_LABEL_DIR = Path("/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/03_synthetische_Datensatz/03_rust/oversampledx10/labels")
 
 OUT_IMAGE_DIR.mkdir(parents=True, exist_ok=True)
 OUT_LABEL_DIR.mkdir(parents=True, exist_ok=True)
 
-OVERSAMPLE_FACTOR = 5
+OVERSAMPLE_FACTOR = 10
 
 IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff"]
 

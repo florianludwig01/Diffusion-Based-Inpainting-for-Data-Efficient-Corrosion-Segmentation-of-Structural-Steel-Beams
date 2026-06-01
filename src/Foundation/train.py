@@ -17,12 +17,12 @@ from transformers import Dinov2Model
 # KONFIGURATION
 # =========================
 
-DATASET_DIR = "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/04_Corrosion_real_synth/oversampled/train"
+DATASET_DIR = "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/04_Corrosion_real_synth/oversampledx10/train"
 
 IMAGE_DIR = os.path.join(DATASET_DIR, "images")
 LABEL_DIR = os.path.join(DATASET_DIR, "labels")
 
-SAVE_PATH = "dinov2_rust_seg_x5_best.pth"
+SAVE_PATH = "dinov2_rust_seg_x10_best.pth"
 
 DINO_MODEL = "facebook/dinov2-base"
 IMG_SIZE = 518  # wichtig: durch Patchgröße 14 teilbar

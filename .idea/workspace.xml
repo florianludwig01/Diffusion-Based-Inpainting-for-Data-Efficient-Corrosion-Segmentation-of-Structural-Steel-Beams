@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="comparison YOLO vs DINOv2 with decoder">
-      <change beforePath="$PROJECT_DIR$/src/Foundation/comparison.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foundation/comparison.py" afterDir="false" />
+    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="training extended with synthetic data">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Foundation/oversampling.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foundation/oversampling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Foundation/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foundation/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Foundation/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foundation/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,11 +85,11 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/results/real_synthx5" />
+      <recent name="$PROJECT_DIR$/results/real_only" />
       <recent name="$PROJECT_DIR$/results" />
       <recent name="$PROJECT_DIR$/src/anomalib/patchcore" />
       <recent name="$PROJECT_DIR$/src/anomalib/fastflow" />
-      <recent name="$PROJECT_DIR$/src/04_evaluation_dataset/YOLO" />
-      <recent name="$PROJECT_DIR$/src/04_evaluation_dataset/FastFlow" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -201,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780308707096</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="training extended with synthetic data">
+      <option name="closed" value="true" />
+      <created>1780321096000</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1780321096000</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +230,8 @@
     <MESSAGE value="added README" />
     <MESSAGE value="update" />
     <MESSAGE value="comparison YOLO vs DINOv2 with decoder" />
-    <option name="LAST_COMMIT_MESSAGE" value="comparison YOLO vs DINOv2 with decoder" />
+    <MESSAGE value="training extended with synthetic data" />
+    <option name="LAST_COMMIT_MESSAGE" value="training extended with synthetic data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
