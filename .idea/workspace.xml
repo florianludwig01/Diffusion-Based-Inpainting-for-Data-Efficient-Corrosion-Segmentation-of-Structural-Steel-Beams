@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="added README" />
+    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/src/Foundation/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Foundation/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Foundation/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Foundation/validation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,42 +39,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.FastFlow.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Test_FastFlow.executor&quot;: &quot;Run&quot;,
-    &quot;Python.YOLO_finetuning.executor&quot;: &quot;Run&quot;,
-    &quot;Python.YOLO_seg.executor&quot;: &quot;Run&quot;,
-    &quot;Python.changing_class.executor&quot;: &quot;Run&quot;,
-    &quot;Python.convert_to_txt.executor&quot;: &quot;Run&quot;,
-    &quot;Python.empty_masks.executor&quot;: &quot;Run&quot;,
-    &quot;Python.merge_YOLO_boxes.executor&quot;: &quot;Run&quot;,
-    &quot;Python.predict.executor&quot;: &quot;Run&quot;,
-    &quot;Python.predict_dinov2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.renaming.executor&quot;: &quot;Run&quot;,
-    &quot;Python.split_data.executor&quot;: &quot;Run&quot;,
-    &quot;Python.train.executor&quot;: &quot;Run&quot;,
-    &quot;Python.train_deit.executor&quot;: &quot;Run&quot;,
-    &quot;Python.train_dinov2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.train_fastflow.executor&quot;: &quot;Run&quot;,
-    &quot;Python.train_patchcore.executor&quot;: &quot;Run&quot;,
-    &quot;Python.video_prediction.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;transformer&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/04_Evaluation_Dataset/src/04_evaluation_dataset&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.FastFlow.executor": "Run",
+    "Python.Test_FastFlow.executor": "Run",
+    "Python.YOLO_finetuning.executor": "Run",
+    "Python.YOLO_seg.executor": "Run",
+    "Python.changing_class.executor": "Run",
+    "Python.convert_to_txt.executor": "Run",
+    "Python.empty_masks.executor": "Run",
+    "Python.merge_YOLO_boxes.executor": "Run",
+    "Python.predict.executor": "Run",
+    "Python.predict_dinov2.executor": "Run",
+    "Python.renaming.executor": "Run",
+    "Python.split_data.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.train.executor": "Run",
+    "Python.train_deit.executor": "Run",
+    "Python.train_dinov2.executor": "Run",
+    "Python.train_fastflow.executor": "Run",
+    "Python.train_patchcore.executor": "Run",
+    "Python.validation.executor": "Run",
+    "Python.video_prediction.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "foundation",
+    "last_opened_file_path": "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/04_Evaluation_Dataset/src/04_evaluation_dataset",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/04_evaluation_dataset" />
@@ -176,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779114250605</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update">
+      <option name="closed" value="true" />
+      <created>1779981447226</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1779981447226</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +209,8 @@
     <MESSAGE value="working on transformer (DINOv2)" />
     <MESSAGE value="finetuned DINO models for corrosion (not working)" />
     <MESSAGE value="added README" />
-    <option name="LAST_COMMIT_MESSAGE" value="added README" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
