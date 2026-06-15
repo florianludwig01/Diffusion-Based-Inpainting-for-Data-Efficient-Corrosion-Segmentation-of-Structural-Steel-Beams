@@ -2,8 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-DINO_CSV = "dinov2_threshold_sweep.csv"
-YOLO_CSV = "yolo_confidence_sweep.csv"
+DINO_CSV = "dinov2_x10_threshold_sweep.csv"
+YOLO_CSV = "yolo_confidence_sweep_x10.csv"
 
 dino = pd.read_csv(DINO_CSV)
 yolo = pd.read_csv(YOLO_CSV)
@@ -135,14 +135,14 @@ plt.plot(
     dino["dataset_recall"],
     dino["dataset_precision"],
     marker="o",
-    label="D (DINOv2 + NN)"
+    label="DS10 (DINOv2 + NN)"
 )
 
 plt.plot(
     yolo["dataset_recall"],
     yolo["dataset_precision"],
     marker="s",
-    label="Y (YOLO-Seg)"
+    label="YS10 (YOLO-Seg)"
 )
 
 plt.xlabel("Recall")
@@ -150,7 +150,7 @@ plt.ylabel("Precision")
 #plt.title("Precision-Recall Comparison")
 plt.legend()
 
-plt.savefig("comparison_precision_recall_baseline.png", dpi=300, bbox_inches="tight")
+plt.savefig("comparison_precision_recall_x10.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 
