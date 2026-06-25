@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="training extended with synthetic data">
+    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="evaluating">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/comparison.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foundation/comparison.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780321096000</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="evaluating">
+      <option name="closed" value="true" />
+      <created>1781514870181</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1781514870181</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +236,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="comparison YOLO vs DINOv2 with decoder" />
     <MESSAGE value="training extended with synthetic data" />
-    <option name="LAST_COMMIT_MESSAGE" value="training extended with synthetic data" />
+    <MESSAGE value="evaluating" />
+    <option name="LAST_COMMIT_MESSAGE" value="evaluating" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
