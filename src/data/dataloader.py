@@ -7,7 +7,7 @@ from PIL import Image
 import torch
 from torch.utils.data import Dataset
 
-from mask_converter import yolo_seg_to_mask
+from .mask_converter import yolo_seg_to_mask
 
 class RustDataset(Dataset):
     def __init__(self, image_dir, label_dir, img_size=518, augment=False):
@@ -24,9 +24,9 @@ class RustDataset(Dataset):
     def __len__(self):
         return len(self.image_files)
 
-    def __getitem__(self, idx, image_dir, image_name):
+    def __getitem__(self, idx):
         image_name = self.image_files[idx]
-        image_path = os.path.join(image_dir, image_name)
+        image_path = os.path.join(self.image_dir, image_name)
 
         label_name = os.path.splitext(image_name)[0] + ".txt"
         label_path = os.path.join(self.label_dir, label_name)

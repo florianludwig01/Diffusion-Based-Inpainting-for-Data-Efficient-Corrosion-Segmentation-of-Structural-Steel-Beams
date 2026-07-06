@@ -1,7 +1,7 @@
 [project]
 authors = [{name = "florian.ludwig", email = "florian.ludwig@rwth-aachen.de"}]
 dependencies = ["anomalib>=2.3.2,<3"]
-name = "04_Evaluation_Dataset"
+name = "evaluation_dataset"
 requires-python = ">= 3.9"
 version = "0.1.0"
 
@@ -9,13 +9,15 @@ version = "0.1.0"
 build-backend = "hatchling.build"
 requires = ["hatchling"]
 
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
 [tool.pixi.workspace]
 channels = ["conda-forge"]
 platforms = ["linux-64"]
 
 [tool.pixi.pypi-dependencies]
-04_evaluation_dataset = { path = ".", editable = true }
-
+evaluation_dataset = { path = ".", editable = true }
 [tool.pixi.tasks]
 merge-labels = "python src/04_evaluation_dataset/utils/merge_YOLO_boxes.py"
 

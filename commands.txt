@@ -1,0 +1,26 @@
+pixi run python3 src/main.py \
+    --mode train \
+    --model dino \
+    --dataset_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/02_Literaturdatensaetze/Combined_Rust \
+    --dataset R1 \
+    --epochs 40 \
+    --batch_size 4 \
+    --img_size 518 \
+    --freeze_encoder
+
+pixi run python3 src/main.py \
+    --mode train \
+    --model yolo \
+    --dataset_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/02_Literaturdatensaetze/Combined_Rust \
+    --dataset R1 \
+    --epochs 50 \
+    --batch_size 2 \
+    --num_workers 0 \
+    --img_size 512
+
+pixi run python3 src/main.py \
+    --mode test \
+    --model dino \
+    --model_path ./output/models/dinov2_rust_seg/R1/best.pth \
+    --output_dir ../output/models/dinov2_rust_seg/R1/test \
+    --save_predictions
