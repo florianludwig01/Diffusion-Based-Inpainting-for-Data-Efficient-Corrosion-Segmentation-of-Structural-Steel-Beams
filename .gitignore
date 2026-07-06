@@ -3,3 +3,5 @@
 !.pixi/config.toml
 *.xml
 workspace.xml
+output/*
+*.pt
