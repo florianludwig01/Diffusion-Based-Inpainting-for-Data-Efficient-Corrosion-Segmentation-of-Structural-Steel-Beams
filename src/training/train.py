@@ -150,28 +150,28 @@ class YOLO_train:
         # Train
         model.train(
             data=self.data_yaml,
-            workers=num_workers,
+            workers=0,#num_workers,
             task="segment",
             imgsz=self.img_size,
             epochs=epochs,
             batch=batch_size,
             patience=50,
             weight_decay=weight_decay,
-            project=os.path.join(self.dataset_dir, "YOLO"),
+            project=os.path.join(self.output_dir, "YOLO"),
             name=str(self.dataset),
             exist_ok=True,
-            degrees=10.0,  # Bild um ±10 Grad rotieren
-            flipud=0.5,  # 50% Chance auf vertikales Spiegeln
-            fliplr=0.5,  # 50% Chance auf horizontales Spiegeln
-            mosaic=1.0,  # Mosaic-Augmentation (4 Bilder kombiniert) zu 100%
-            mixup=0.2,  # 20% Chance, zwei Bilder übereinander zu blenden
-            scale=0.5,  # Zoom/Skalierung ±50%
-            hsv_h=0.015,  # Farbton-Variation (Hue)
-            hsv_s=0.7,  # Sättigungs-Variation (Saturation)
-            hsv_v=0.4
+            # degrees=10.0,  # Bild um ±10 Grad rotieren
+            # flipud=0.5,  # 50% Chance auf vertikales Spiegeln
+            # fliplr=0.5,  # 50% Chance auf horizontales Spiegeln
+            # mosaic=0.0,  # Mosaic-Augmentation (4 Bilder kombiniert) zu 100%
+            # mixup=0.1,  # 20% Chance, zwei Bilder übereinander zu blenden
+            # scale=0.5,  # Zoom/Skalierung ±50%
+            # hsv_h=0.015,  # Farbton-Variation (Hue)
+            # hsv_s=0.7,  # Sättigungs-Variation (Saturation)
+            # hsv_v=0.4
         )
 
-        best = os.path.join(self.dataset_dir, "YOLO/weights/best.pt")
+        best = os.path.join(self.output_dir, "YOLO/weights/best.pt")
         if best.exists():
             YOLO(str(best)).val(data=str(self.data_yaml), imgsz=self.img_size)
 
