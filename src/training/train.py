@@ -8,13 +8,15 @@ import torch
 from torch.utils.data import DataLoader
 import os
 from ultralytics import YOLO
+from pathlib import Path
+import shutil
 
 class DINO_train():
     def __init__(self, args):
         self.args = args
         self.dataset_dir = args.dataset_dir
         self.train_dir = os.path.join(self.dataset_dir, "train")
-        self.val_dir = os.path.join(self.dataset_dir, "val")
+        self.val_dir = os.path.join(self.dataset_dir, "valid")
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.img_size = args.img_size
         self.dataset = args.dataset
@@ -136,42 +138,47 @@ class DINO_train():
 class YOLO_train:
     def __init__(self, args):
         self.args = args
-        self.dataset_dir = args.dataset_dir
-        self.data_yaml = os.path.join(self.dataset_dir, "data.yaml")
+        self.dataset_dir = Path(args.dataset_dir).resolve()
+        self.data_yaml = self.dataset_dir / "data.yaml"
         self.img_size = args.img_size
         self.dataset = args.dataset
-        self.output_dir = args.output_dir
-        self.model_save_dir = os.path.join(self.output_dir, "models/yolo_rust_seg")
+        self.output_dir = Path(args.output_dir).resolve()
         self.yolo_model = args.yolo_model
+
+        self.project_dir = self.output_dir / "YOLO"
+        self.model_save_dir = self.output_dir / "models" / "yolo_rust_seg" / self.dataset
+
+        self.project_dir.mkdir(parents=True, exist_ok=True)
+        self.model_save_dir.mkdir(parents=True, exist_ok=True)
 
     def train(self, epochs, batch_size, num_workers=2, LR=1e-4, weight_decay=1e-3):
         model = YOLO(self.yolo_model)
 
-        # Train
         model.train(
-            data=self.data_yaml,
-            workers=0,#num_workers,
+            data=str(self.data_yaml),
+            workers=0,
             task="segment",
             imgsz=self.img_size,
             epochs=epochs,
             batch=batch_size,
             patience=50,
             weight_decay=weight_decay,
-            project=os.path.join(self.output_dir, "YOLO"),
+            project=str(self.project_dir),
             name=str(self.dataset),
             exist_ok=True,
-            # degrees=10.0,  # Bild um ±10 Grad rotieren
-            # flipud=0.5,  # 50% Chance auf vertikales Spiegeln
-            # fliplr=0.5,  # 50% Chance auf horizontales Spiegeln
-            # mosaic=0.0,  # Mosaic-Augmentation (4 Bilder kombiniert) zu 100%
-            # mixup=0.1,  # 20% Chance, zwei Bilder übereinander zu blenden
-            # scale=0.5,  # Zoom/Skalierung ±50%
-            # hsv_h=0.015,  # Farbton-Variation (Hue)
-            # hsv_s=0.7,  # Sättigungs-Variation (Saturation)
-            # hsv_v=0.4
+
+            degrees=10.0,
+            flipud=0.5,
+            fliplr=0.5,
+            mosaic=0.0,
+            mixup=0.1,
+            scale=0.5,
+            hsv_h=0.015,
+            hsv_s=0.7,
+            hsv_v=0.4,
         )
 
-        best = os.path.join(self.output_dir, "YOLO/weights/best.pt")
-        if best.exists():
-            YOLO(str(best)).val(data=str(self.data_yaml), imgsz=self.img_size)
+        best_dst = self.model_save_dir / f"best.pt"
+        shutil.copy2(model.trainer.best, best_dst)
+
 

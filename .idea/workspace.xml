@@ -5,33 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="refactoring">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DINO/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DINO/dinov2_rust_finetuned.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DINO/dinov2_rust_finetuned_last2blocks.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DINO/dinov2_rust_finetuned_reg.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DINO/predict_dinov2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DINO/rust_feature_embedding.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DINO/train_dinov2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/best_model_comparison.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/comparison.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/comparison_precision_recall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/comparison_precision_recall_baseline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/comparison_precision_recall_x10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/comparison_precision_recall_x5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/dinov2_rust_test_results.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/dinov2_threshold_sweep.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/dinov2_x10_threshold_sweep.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/dinov2_x5_threshold_sweep.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/oversampling.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/validation.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/yolo_confidence_sweep.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/yolo_confidence_sweep_x10.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foundation/yolo_confidence_sweep_x5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/commands.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testing/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/testing/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/training/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/training/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

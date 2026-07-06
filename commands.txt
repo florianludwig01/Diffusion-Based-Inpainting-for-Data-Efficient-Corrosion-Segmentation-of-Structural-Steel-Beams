@@ -1,7 +1,7 @@
 pixi run python3 src/main.py \
     --mode train \
     --model dino \
-    --dataset_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/02_Literaturdatensaetze/Combined_Rust \
+    --dataset_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/02_Literaturdatensaetze/Corrosion/Pretraining \
     --dataset R1 \
     --epochs 40 \
     --batch_size 4 \
@@ -11,7 +11,7 @@ pixi run python3 src/main.py \
 pixi run python3 src/main.py \
     --mode train \
     --model yolo \
-    --dataset_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/02_Literaturdatensaetze/Combined_Rust \
+    --dataset_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/02_Literaturdatensaetze/Corrosion/Pretraining \
     --dataset R1 \
     --epochs 50 \
     --batch_size 2 \
@@ -22,5 +22,13 @@ pixi run python3 src/main.py \
     --mode test \
     --model dino \
     --model_path ./output/models/dinov2_rust_seg/R1/best.pth \
-    --output_dir ../output/models/dinov2_rust_seg/R1/test \
+    --output_dir ./output/test/dinov2_rust_seg/R1 \
+    --save_predictions
+
+pixi run python3 src/main.py \
+    --mode test \
+    --model yolo \
+    --model_path ./output/models/yolo_rust_seg/R1/best.pt \
+    --output_dir ./output/test/yolo_rust_seg/R1 \
+    --img_size 512 \
     --save_predictions

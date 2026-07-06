@@ -212,24 +212,168 @@ class YOLO_test:
         self.args = args
         self.model_path = args.model_path
         self.test_dir = args.test_dir
-        self.data_yaml = args.data_yaml
+        self.image_dir = os.path.join(self.test_dir, "images")
+        self.label_dir = os.path.join(self.test_dir, "labels")
         self.img_size = args.img_size
         self.output_dir = args.output_dir
+        self.summary_csv = os.path.join(self.output_dir, "yolo_confidence_sweep.csv")
 
         os.makedirs(self.output_dir, exist_ok=True)
+
+        self.conf_values = args.thresholds
+
+
+    def predict_mask(self, model, image_path, width, height, conf):
+        results = model.predict(
+            source=image_path,
+            imgsz=self.img_size,
+            conf=conf,
+            verbose=False
+        )
+
+        pred_mask = np.zeros((height, width), dtype=np.uint8)
+        result = results[0]
+
+        if result.masks is None:
+            return pred_mask
+
+        masks = result.masks.data.cpu().numpy()
+
+        for mask in masks:
+            mask_resized = cv2.resize(
+                mask,
+                (width, height),
+                interpolation=cv2.INTER_LINEAR
+            )
+            pred_mask[mask_resized > 0.5] = 1
+
+        return pred_mask
+
+    def save_overlay(self, image, pred_mask, gt_mask, image_name, conf):
+        conf_dir = os.path.join(self.output_dir, f"conf_{conf:.3f}")
+        os.makedirs(conf_dir, exist_ok=True)
+
+        base_name = os.path.splitext(image_name)[0]
+
+        cv2.imwrite(
+            os.path.join(conf_dir, base_name + "_pred_mask.png"),
+            (pred_mask * 255).astype(np.uint8)
+        )
+
+        cv2.imwrite(
+            os.path.join(conf_dir, base_name + "_gt_mask.png"),
+            (gt_mask * 255).astype(np.uint8)
+        )
+
+        overlay_pred = image.copy()
+        overlay_pred[pred_mask > 0] = [0, 0, 255]
+        result_pred = cv2.addWeighted(image, 0.65, overlay_pred, 0.35, 0)
+
+        cv2.imwrite(
+            os.path.join(conf_dir, base_name + "_pred_overlay.png"),
+            result_pred
+        )
+
+        overlay_gt = image.copy()
+        overlay_gt[gt_mask > 0] = [0, 255, 0]
+        result_gt = cv2.addWeighted(image, 0.65, overlay_gt, 0.35, 0)
+
+        cv2.imwrite(
+            os.path.join(conf_dir, base_name + "_gt_overlay.png"),
+            result_gt
+        )
 
     def test(self):
         model = YOLO(self.model_path)
 
-        results = model.val(
-            data=self.data_yaml,
-            imgsz=self.img_size,
-            task="segment",
-            split="test",
-            project=self.output_dir,
-            name="yolo_test",
-            exist_ok=True,
-        )
+        image_files = sorted([
+            f for f in os.listdir(self.image_dir)
+            if f.lower().endswith((".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff"))
+        ])
 
-        print(results)
-        return results
+        summary_rows = []
+
+        for conf in self.conf_values:
+            total_tp = total_fp = total_fn = total_tn = 0
+            image_results = []
+
+            for image_name in tqdm(image_files, desc=f"YOLO conf={conf}"):
+                image_path = os.path.join(self.image_dir, image_name)
+
+                image = cv2.imread(image_path)
+                if image is None:
+                    continue
+
+                height, width = image.shape[:2]
+
+                label_name = os.path.splitext(image_name)[0] + ".txt"
+                label_path = os.path.join(self.label_dir, label_name)
+
+                gt_mask = yolo_seg_to_mask(label_path, width, height)
+
+                pred_mask = self.predict_mask(
+                    model=model,
+                    image_path=image_path,
+                    width=width,
+                    height=height,
+                    conf=conf
+                )
+
+                metrics = compute_metrics(pred_mask, gt_mask)
+
+                total_tp += metrics["tp"]
+                total_fp += metrics["fp"]
+                total_fn += metrics["fn"]
+                total_tn += metrics["tn"]
+
+                image_results.append(metrics)
+
+                if self.args.save_predictions:
+                    self.save_overlay(
+                        image=image,
+                        pred_mask=pred_mask,
+                        gt_mask=gt_mask,
+                        image_name=image_name,
+                        conf=conf
+                    )
+
+            eps = 1e-7
+
+            dataset_iou = total_tp / (total_tp + total_fp + total_fn + eps)
+            dataset_dice = (2 * total_tp) / (2 * total_tp + total_fp + total_fn + eps)
+            dataset_precision = total_tp / (total_tp + total_fp + eps)
+            dataset_recall = total_tp / (total_tp + total_fn + eps)
+            dataset_accuracy = (total_tp + total_tn) / (
+                total_tp + total_fp + total_fn + total_tn + eps
+            )
+
+            row = {
+                "conf": conf,
+                "dataset_iou": dataset_iou,
+                "dataset_dice": dataset_dice,
+                "dataset_precision": dataset_precision,
+                "dataset_recall": dataset_recall,
+                "dataset_accuracy": dataset_accuracy,
+                "mean_iou": np.mean([r["iou"] for r in image_results]),
+                "mean_dice": np.mean([r["dice"] for r in image_results]),
+                "mean_precision": np.mean([r["precision"] for r in image_results]),
+                "mean_recall": np.mean([r["recall"] for r in image_results]),
+            }
+
+            summary_rows.append(row)
+
+            print(
+                f"Conf {conf} | "
+                f"IoU: {dataset_iou:.4f} | "
+                f"Dice: {dataset_dice:.4f} | "
+                f"Precision: {dataset_precision:.4f} | "
+                f"Recall: {dataset_recall:.4f}"
+            )
+
+        df = pd.DataFrame(summary_rows)
+        df.to_csv(self.summary_csv, index=False)
+
+        best = df.loc[df["dataset_iou"].idxmax()]
+        print("\nBest YOLO result:")
+        print(best)
+        print(f"\nCSV gespeichert: {self.summary_csv}")
