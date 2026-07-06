@@ -1,0 +1,7 @@
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+*.xml
+workspace.xml
+output/*
+*.pt

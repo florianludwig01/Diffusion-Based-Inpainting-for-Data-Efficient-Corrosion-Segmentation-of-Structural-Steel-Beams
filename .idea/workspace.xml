@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="refactoring">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/commands.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testing/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/testing/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/training/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/training/train.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3CA9GJHv6ZyluIrJwJLN0MXkmWD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.FastFlow.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Test_FastFlow.executor&quot;: &quot;Run&quot;,
+    &quot;Python.YOLO_finetuning.executor&quot;: &quot;Run&quot;,
+    &quot;Python.YOLO_seg.executor&quot;: &quot;Run&quot;,
+    &quot;Python.changing_class.executor&quot;: &quot;Run&quot;,
+    &quot;Python.comparison.executor&quot;: &quot;Run&quot;,
+    &quot;Python.convert_to_txt.executor&quot;: &quot;Run&quot;,
+    &quot;Python.empty_masks.executor&quot;: &quot;Run&quot;,
+    &quot;Python.merge_YOLO_boxes.executor&quot;: &quot;Run&quot;,
+    &quot;Python.oversampling.executor&quot;: &quot;Run&quot;,
+    &quot;Python.predict.executor&quot;: &quot;Run&quot;,
+    &quot;Python.predict_dinov2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.renaming.executor&quot;: &quot;Run&quot;,
+    &quot;Python.split_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_deit.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_dinov2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_fastflow.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_patchcore.executor&quot;: &quot;Run&quot;,
+    &quot;Python.validation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.video_prediction.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;paper&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/04_Evaluation_Dataset/src/Foundation&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Foundation" />
+      <recent name="$PROJECT_DIR$/src/04_evaluation_dataset" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/results/real_synthx5" />
+      <recent name="$PROJECT_DIR$/results/real_only" />
+      <recent name="$PROJECT_DIR$/results" />
+      <recent name="$PROJECT_DIR$/src/anomalib/patchcore" />
+      <recent name="$PROJECT_DIR$/src/anomalib/fastflow" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-50341a9f1f9c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.26222.68" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="" />
+      <created>1775817409533</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1775817409533</updated>
+    </task>
+    <task id="LOCAL-00001" summary="YOLO training">
+      <option name="closed" value="true" />
+      <created>1777295958326</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1777295958326</updated>
+    </task>
+    <task id="LOCAL-00002" summary="YOLO finetuning">
+      <option name="closed" value="true" />
+      <created>1777902312261</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1777902312261</updated>
+    </task>
+    <task id="LOCAL-00003" summary="testing YOLO and AnomaLib">
+      <option name="closed" value="true" />
+      <created>1779094942165</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1779094942165</updated>
+    </task>
+    <task id="LOCAL-00004" summary="restructure to AnomaLib only">
+      <option name="closed" value="true" />
+      <created>1779095364504</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1779095364504</updated>
+    </task>
+    <task id="LOCAL-00005" summary="explanation of patchcore as comment">
+      <option name="closed" value="true" />
+      <created>1779095562288</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1779095562288</updated>
+    </task>
+    <task id="LOCAL-00006" summary="explanation of fastflow as comment">
+      <option name="closed" value="true" />
+      <created>1779095699855</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1779095699855</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added README">
+      <option name="closed" value="true" />
+      <created>1779099526202</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1779099526202</updated>
+    </task>
+    <task id="LOCAL-00008" summary="working on fastflow and patchcore">
+      <option name="closed" value="true" />
+      <created>1779109997727</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1779109997727</updated>
+    </task>
+    <task id="LOCAL-00009" summary="working on transformer (DINOv2)">
+      <option name="closed" value="true" />
+      <created>1779113957012</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1779113957012</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added README">
+      <option name="closed" value="true" />
+      <created>1779114250605</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1779114250605</updated>
+    </task>
+    <task id="LOCAL-00011" summary="update">
+      <option name="closed" value="true" />
+      <created>1779981447226</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1779981447226</updated>
+    </task>
+    <task id="LOCAL-00012" summary="comparison YOLO vs DINOv2 with decoder">
+      <option name="closed" value="true" />
+      <created>1780308707096</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1780308707096</updated>
+    </task>
+    <task id="LOCAL-00013" summary="training extended with synthetic data">
+      <option name="closed" value="true" />
+      <created>1780321096000</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1780321096000</updated>
+    </task>
+    <task id="LOCAL-00014" summary="evaluating">
+      <option name="closed" value="true" />
+      <created>1781514870181</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1781514870181</updated>
+    </task>
+    <task id="LOCAL-00015" summary="refactoring">
+      <option name="closed" value="true" />
+      <created>1783325954261</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1783325954261</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="YOLO training" />
+    <MESSAGE value="YOLO finetuning" />
+    <MESSAGE value="testing YOLO and AnomaLib" />
+    <MESSAGE value="restructure to AnomaLib only" />
+    <MESSAGE value="explanation of patchcore as comment" />
+    <MESSAGE value="explanation of fastflow as comment" />
+    <MESSAGE value="working on fastflow and patchcore" />
+    <MESSAGE value="working on transformer (DINOv2)" />
+    <MESSAGE value="finetuned DINO models for corrosion (not working)" />
+    <MESSAGE value="added README" />
+    <MESSAGE value="update" />
+    <MESSAGE value="comparison YOLO vs DINOv2 with decoder" />
+    <MESSAGE value="training extended with synthetic data" />
+    <MESSAGE value="evaluating" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/04_evaluation_dataset/YOLO/YOLO_seg.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
