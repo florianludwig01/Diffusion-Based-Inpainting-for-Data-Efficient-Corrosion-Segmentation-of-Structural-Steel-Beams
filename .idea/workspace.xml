@@ -5,6 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="evaluating">
+      <change afterPath="$PROJECT_DIR$/src/data/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/dataloader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/mask_converter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/dino.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/yolo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +99,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-c59985aa861c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.24374.152" />
+        <option value="bundled-python-sdk-50341a9f1f9c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.26222.68" />
       </set>
     </attachedChunks>
   </component>
