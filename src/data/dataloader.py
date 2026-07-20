@@ -9,6 +9,12 @@ from torch.utils.data import Dataset
 
 from .mask_converter import yolo_seg_to_mask
 
+
+def seed_worker(worker_id):
+    worker_seed = torch.initial_seed() % (2**32)
+    random.seed(worker_seed)
+    np.random.seed(worker_seed)
+
 class RustDataset(Dataset):
     def __init__(self, image_dir, label_dir, img_size=518, augment=False):
         self.image_dir = image_dir

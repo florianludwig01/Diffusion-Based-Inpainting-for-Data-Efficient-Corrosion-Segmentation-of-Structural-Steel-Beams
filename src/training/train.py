@@ -1,4 +1,4 @@
-from data.dataloader import RustDataset
+from data.dataloader import RustDataset, seed_worker
 from models.dino import DINOv2RustSegmenter, DINOv3RustSegmenter
 from loss_metrices.loss import combined_loss
 from loss_metrices.metrices import rust_iou_from_logits
@@ -10,8 +10,19 @@ import os
 from ultralytics import YOLO
 from pathlib import Path
 import shutil
+import random
+import numpy as np
 
-from src.models.dino import DINOv3RustSegmenter
+
+
+def set_seed(seed):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+    torch.use_deterministic_algorithms(True, warn_only=True)
 
 
 class DINO_train():
@@ -25,11 +36,18 @@ class DINO_train():
         self.dataset = args.dataset
         self.dino_model = args.dino_model
         self.output_dir = args.output_dir
-        self.model_save_dir = os.path.join(self.output_dir, "models", self.dino_model, self.dataset)
+        self.seed = args.seed
+        self.model_save_dir = os.path.join(
+            self.output_dir, "models", self.dino_model, self.dataset, f"seed_{self.seed}"
+        )
         os.makedirs(self.model_save_dir, exist_ok=True)
 
 
     def train(self, epochs, batch_size,num_workers=4, LR=1e-4, weight_decay=1e-4, freeze_encoder=True):
+
+        set_seed(self.seed)
+        generator = torch.Generator()
+        generator.manual_seed(self.seed)
 
         train_dataset = RustDataset(
             os.path.join(self.train_dir, "images"),
@@ -42,7 +60,7 @@ class DINO_train():
             os.path.join(self.val_dir, "images"),
             os.path.join(self.val_dir, "labels"),
             img_size=self.img_size,
-            augment=True
+            augment=False
         )
 
         train_loader = DataLoader(
@@ -50,7 +68,9 @@ class DINO_train():
             batch_size=batch_size,
             shuffle=True,
             num_workers=num_workers,
-            pin_memory=True
+            pin_memory=True,
+            worker_init_fn=seed_worker,
+            generator=generator
         )
 
         val_loader = DataLoader(
@@ -58,7 +78,9 @@ class DINO_train():
             batch_size=batch_size,
             shuffle=False,
             num_workers=num_workers,
-            pin_memory=True
+            pin_memory=True,
+            worker_init_fn=seed_worker,
+            generator=generator
         )
         if self.dino_model == "dinov2":
             model = DINOv2RustSegmenter(
@@ -133,7 +155,8 @@ class DINO_train():
                     "model_state_dict": model.state_dict(),
                     "model_name": self.dino_model,
                     "img_size": self.img_size,
-                    "best_iou": best_iou
+                    "best_iou": best_iou,
+                    "seed": self.seed
                 }, os.path.join(self.model_save_dir, "best.pth"))
 
                 print(f"Saved new best model: IoU = {best_iou:.4f}")
@@ -150,19 +173,25 @@ class YOLO_train:
         self.dataset = args.dataset
         self.output_dir = Path(args.output_dir).resolve()
         self.yolo_model = args.yolo_model
+        self.seed = args.seed
 
         self.project_dir = self.output_dir / "YOLO"
-        self.model_save_dir = self.output_dir / "models" / "yolo_rust_seg" / self.dataset
+        self.model_save_dir = (
+            self.output_dir / "models" / "yolo_rust_seg" / self.dataset / f"seed_{self.seed}"
+        )
 
         self.project_dir.mkdir(parents=True, exist_ok=True)
         self.model_save_dir.mkdir(parents=True, exist_ok=True)
 
     def train(self, epochs, batch_size, num_workers=2, LR=1e-4, weight_decay=1e-3):
+        set_seed(self.seed)
         model = YOLO(self.yolo_model)
 
         model.train(
             data=str(self.data_yaml),
-            workers=0,
+            workers=num_workers,
+            seed=self.seed,
+            deterministic=True,
             task="segment",
             imgsz=self.img_size,
             epochs=epochs,
@@ -170,8 +199,9 @@ class YOLO_train:
             patience=50,
             weight_decay=weight_decay,
             project=str(self.project_dir),
-            name=str(self.dataset),
-            exist_ok=True,
+            name=f"{self.dataset}_seed_{self.seed}",
+            exist_ok=False,
+            lr0=LR,
 
             degrees=10.0,
             flipud=0.5,
@@ -186,5 +216,3 @@ class YOLO_train:
 
         best_dst = self.model_save_dir / f"best.pt"
         shutil.copy2(model.trainer.best, best_dst)
-
-

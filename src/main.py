@@ -4,6 +4,9 @@ from training.train import DINO_train, YOLO_train
 from testing.test import DINO_test, YOLO_test
 
 
+EXPERIMENT_SEEDS = [42, 123, 456, 789, 1024, 2024, 31415, 27182, 65537, 99991,]
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Rust Segmentation Training")
 
@@ -52,20 +55,24 @@ def main():
     args = parse_args()
 
     if args.mode == "train":
-        if args.model == "dino":
-            trainer = DINO_train(args)
-        elif args.model == "yolo":
-            trainer = YOLO_train(args)
-        else:
-            raise ValueError(f"Unknown model: {args.model}")
+        for run_number, seed in enumerate(EXPERIMENT_SEEDS, start=1):
+            args.seed = seed
+            print(f"\nRun {run_number}/{len(EXPERIMENT_SEEDS)} | Seed: {seed}")
 
-        trainer.train(
-            epochs=args.epochs,
-            batch_size=args.batch_size,
-            num_workers=args.num_workers,
-            LR=args.lr,
-            weight_decay=args.weight_decay
-        )
+            if args.model == "dino":
+                trainer = DINO_train(args)
+            elif args.model == "yolo":
+                trainer = YOLO_train(args)
+            else:
+                raise ValueError(f"Unknown model: {args.model}")
+
+            trainer.train(
+                epochs=args.epochs,
+                batch_size=args.batch_size,
+                num_workers=args.num_workers,
+                LR=args.lr,
+                weight_decay=args.weight_decay
+            )
     elif args.mode == "test":
         tester = DINO_test(args) if args.model == "dino" else YOLO_test(args)
         tester.test()

@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="debugging">
-      <change afterPath="$PROJECT_DIR$/src/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/converter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/debugging_masks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/oversampling.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/split_data.py" afterDir="false" />
+    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="added DINOv3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/commands.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/dataloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dataloader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/dino.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/dino.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testing/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/testing/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/training/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/training/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,61 +34,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000000008569916" />
-      <entry key="MS500" value="1.0154575126285423" />
-      <entry key="S2" value="1.4957135519632117" />
-      <entry key="S5" value="2.553553296554799" />
-      <entry key="S10" value="3.634513980794868" />
-      <entry key="S30" value="4.983338875798221" />
-      <entry key="S60" value="5.454917671171271" />
-      <entry key="M2" value="5.728539948976838" />
-      <entry key="M5" value="7.849641900904352" />
-      <entry key="M10" value="19.486759371358435" />
-      <entry key="M15" value="33.10686278074682" />
-      <entry key="M30" value="65.95083170072415" />
-      <entry key="H1" value="112.37998362950076" />
-      <entry key="H2" value="171.66236790863118" />
-      <entry key="H4" value="227.7101623775897" />
-      <entry key="D1" value="301.7496522362708" />
-      <entry key="W1" value="318.1391008780885" />
+      <entry key="MS100" value="1.9745499957715151" />
+      <entry key="MS500" value="4.025345045881041" />
+      <entry key="S2" value="10.732632462920682" />
+      <entry key="S5" value="22.571245981381256" />
+      <entry key="S10" value="33.19506345279208" />
+      <entry key="S30" value="45.5690876358557" />
+      <entry key="S60" value="53.45691398981474" />
+      <entry key="M2" value="72.35584878526939" />
+      <entry key="M5" value="134.3718161513887" />
+      <entry key="M10" value="200.24914857932788" />
+      <entry key="M15" value="235.64193334658745" />
+      <entry key="M30" value="284.073803051212" />
+      <entry key="H1" value="330.5792354465605" />
+      <entry key="H2" value="398.94401602582724" />
+      <entry key="H4" value="483.07646125027514" />
+      <entry key="D1" value="624.027762601283" />
+      <entry key="W1" value="659.6276269606494" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
-      <entry key="S5" value="2.028684759929463E-176" />
-      <entry key="S10" value="1.4243190513117033E-88" />
-      <entry key="S30" value="5.222387514521105E-30" />
-      <entry key="S60" value="2.2852543660592416E-15" />
-      <entry key="M2" value="4.780541860023761E-8" />
-      <entry key="M5" value="0.0012098315210545105" />
-      <entry key="M10" value="0.04476011095799072" />
-      <entry key="M15" value="0.18055087838501277" />
-      <entry key="M30" value="0.8842734081916221" />
-      <entry key="H1" value="2.219518293762662" />
-      <entry key="H2" value="3.7759532215051297" />
-      <entry key="H4" value="5.074514865852372" />
-      <entry key="D1" value="6.621256863386536" />
-      <entry key="W1" value="6.944236231968048" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="4.625682189367164E-121" />
+      <entry key="S60" value="6.801236793472097E-61" />
+      <entry key="M2" value="8.247148212612527E-31" />
+      <entry key="M5" value="9.494138548583475E-13" />
+      <entry key="M10" value="1.2538814841525188E-6" />
+      <entry key="M15" value="1.6653665175009655E-4" />
+      <entry key="M30" value="0.02685602155104712" />
+      <entry key="H1" value="0.38679983908014887" />
+      <entry key="H2" value="1.5763054724403638" />
+      <entry key="H4" value="3.278698017402039" />
+      <entry key="D1" value="6.156372897726772" />
+      <entry key="W1" value="6.872392952314704" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9862327053327141" />
-      <entry key="MS500" value="1.012624734255602" />
-      <entry key="S2" value="1.4945377860706794" />
-      <entry key="S5" value="2.552661832975902" />
-      <entry key="S10" value="3.633831305699868" />
-      <entry key="S30" value="4.98300587789249" />
-      <entry key="S60" value="5.454732099406215" />
-      <entry key="M2" value="5.728441631811505" />
-      <entry key="M5" value="7.85067450352637" />
-      <entry key="M10" value="19.529826533270413" />
-      <entry key="M15" value="33.2837703516905" />
-      <entry key="M30" value="66.8283486570754" />
-      <entry key="H1" value="114.59239397772811" />
-      <entry key="H2" value="175.4329615249168" />
-      <entry key="H4" value="232.78133740209" />
-      <entry key="D1" value="308.37023369436537" />
-      <entry key="W1" value="325.0832372660573" />
+      <entry key="MS100" value="1.9339144043248793" />
+      <entry key="MS500" value="4.008865116053564" />
+      <entry key="S2" value="10.72201282586116" />
+      <entry key="S5" value="22.562322490556518" />
+      <entry key="S10" value="33.18845708919977" />
+      <entry key="S30" value="45.56604029313416" />
+      <entry key="S60" value="53.45511287286168" />
+      <entry key="M2" value="72.35461438575426" />
+      <entry key="M5" value="134.37090538401247" />
+      <entry key="M10" value="200.24847845317888" />
+      <entry key="M15" value="235.6415722356235" />
+      <entry key="M30" value="284.1001415157608" />
+      <entry key="H1" value="330.96462480770754" />
+      <entry key="H2" value="400.51799382226267" />
+      <entry key="H4" value="486.35295506589637" />
+      <entry key="D1" value="630.183499630591" />
+      <entry key="W1" value="666.4999199714508" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -304,7 +297,15 @@
       <option name="project" value="LOCAL" />
       <updated>1783348327677</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="added DINOv3">
+      <option name="closed" value="true" />
+      <created>1784546365649</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1784546365649</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +328,8 @@
     <MESSAGE value="evaluating" />
     <MESSAGE value="refactoring" />
     <MESSAGE value="debugging" />
-    <option name="LAST_COMMIT_MESSAGE" value="debugging" />
+    <MESSAGE value="added DINOv3" />
+    <option name="LAST_COMMIT_MESSAGE" value="added DINOv3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
