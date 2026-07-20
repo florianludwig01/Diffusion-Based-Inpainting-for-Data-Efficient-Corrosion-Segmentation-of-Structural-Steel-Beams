@@ -1,5 +1,5 @@
 from data.dataloader import RustDataset
-from models.dino import DINOv2RustSegmenter
+from models.dino import DINOv2RustSegmenter, DINOv3RustSegmenter
 from loss_metrices.loss import combined_loss
 from loss_metrices.metrices import rust_iou_from_logits
 
@@ -10,6 +10,9 @@ import os
 from ultralytics import YOLO
 from pathlib import Path
 import shutil
+
+from src.models.dino import DINOv3RustSegmenter
+
 
 class DINO_train():
     def __init__(self, args):
@@ -22,7 +25,7 @@ class DINO_train():
         self.dataset = args.dataset
         self.dino_model = args.dino_model
         self.output_dir = args.output_dir
-        self.model_save_dir = os.path.join(self.output_dir, "models/dinov2_rust_seg/", self.dataset)
+        self.model_save_dir = os.path.join(self.output_dir, "models", self.dino_model, self.dataset)
         os.makedirs(self.model_save_dir, exist_ok=True)
 
 
@@ -57,11 +60,14 @@ class DINO_train():
             num_workers=num_workers,
             pin_memory=True
         )
-
-        model = DINOv2RustSegmenter(
-            model_name=self.dino_model,
-            freeze_encoder=freeze_encoder
-        ).to(self.device)
+        if self.dino_model == "dinov2":
+            model = DINOv2RustSegmenter(
+                freeze_encoder=freeze_encoder
+            ).to(self.device)
+        elif self.dino_model == "dinov3":
+            model = DINOv3RustSegmenter(freeze_encoder=freeze_encoder).to(self.device)
+        else:
+            raise NotImplementedError
 
         optimizer = torch.optim.AdamW(
             filter(lambda p: p.requires_grad, model.parameters()),
@@ -130,9 +136,9 @@ class DINO_train():
                     "best_iou": best_iou
                 }, os.path.join(self.model_save_dir, "best.pth"))
 
-                print(f"Neues bestes Modell gespeichert: IoU = {best_iou:.4f}")
+                print(f"Saved new best model: IoU = {best_iou:.4f}")
 
-        print("Training beendet.")
+        print("Training finished.")
         print("Best Rust IoU:", best_iou)
 
 class YOLO_train:

@@ -31,7 +31,7 @@ def parse_args():
     # YOLO
     parser.add_argument("--yolo_model", type=str, default="yolo26s-seg.pt")
     # DINO
-    parser.add_argument("--dino_model", type=str, default="facebook/dinov2-base")
+    parser.add_argument("--dino_model", type=str, default="dinov3")
 
     parser.add_argument("--freeze_encoder", action="store_true")
     parser.add_argument("--save_predictions", action="store_true")
