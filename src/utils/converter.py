@@ -5,7 +5,7 @@ from pathlib import Path
 # ==========================================
 
 DATASET_DIR = Path(
-    "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/01_Hybrid_Flux_x1/train"
+    "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/04_Synth_Jugger"
 )
 
 IMAGE_DIR = DATASET_DIR / "images"

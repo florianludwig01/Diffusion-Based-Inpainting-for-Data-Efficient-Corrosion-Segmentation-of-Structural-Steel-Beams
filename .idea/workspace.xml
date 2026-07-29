@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="added DINOv3">
+    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="added random seed experiments">
+      <change afterPath="$PROJECT_DIR$/comfyUI_workflows/FLUX_corrosion_steel_beams.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/04_Evaluation_Dataset.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/evaluation_dataset.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/dataloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dataloader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/commands.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pixi.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pixi.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/training/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/training/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/converter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/debugging_masks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/debugging_masks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/split_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/split_data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +24,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="4002" />
+    <option name="cachedIndexableFilesCount" value="5927" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -34,61 +42,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.9745499957715151" />
-      <entry key="MS500" value="4.025345045881041" />
-      <entry key="S2" value="10.732632462920682" />
-      <entry key="S5" value="22.571245981381256" />
-      <entry key="S10" value="33.19506345279208" />
-      <entry key="S30" value="45.5690876358557" />
-      <entry key="S60" value="53.45691398981474" />
-      <entry key="M2" value="72.35584878526939" />
-      <entry key="M5" value="134.3718161513887" />
-      <entry key="M10" value="200.24914857932788" />
-      <entry key="M15" value="235.64193334658745" />
-      <entry key="M30" value="284.073803051212" />
-      <entry key="H1" value="330.5792354465605" />
-      <entry key="H2" value="398.94401602582724" />
-      <entry key="H4" value="483.07646125027514" />
-      <entry key="D1" value="624.027762601283" />
-      <entry key="W1" value="659.6276269606494" />
+      <entry key="MS100" value="1.5440109790273353" />
+      <entry key="MS500" value="4.54653991634256" />
+      <entry key="S2" value="13.63145498361507" />
+      <entry key="S5" value="24.64378647265707" />
+      <entry key="S10" value="33.615215705269335" />
+      <entry key="S30" value="48.328727666037196" />
+      <entry key="S60" value="65.46403643798476" />
+      <entry key="M2" value="90.19939485510545" />
+      <entry key="M5" value="140.46109293524282" />
+      <entry key="M10" value="186.98311544903444" />
+      <entry key="M15" value="211.65604930806532" />
+      <entry key="M30" value="243.94142513644042" />
+      <entry key="H1" value="263.8712610494405" />
+      <entry key="H2" value="274.99792578579525" />
+      <entry key="H4" value="280.88436830826294" />
+      <entry key="D1" value="325.4063610690579" />
+      <entry key="W1" value="735.4629434464895" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="4.625682189367164E-121" />
-      <entry key="S60" value="6.801236793472097E-61" />
-      <entry key="M2" value="8.247148212612527E-31" />
-      <entry key="M5" value="9.494138548583475E-13" />
-      <entry key="M10" value="1.2538814841525188E-6" />
-      <entry key="M15" value="1.6653665175009655E-4" />
-      <entry key="M30" value="0.02685602155104712" />
-      <entry key="H1" value="0.38679983908014887" />
-      <entry key="H2" value="1.5763054724403638" />
-      <entry key="H4" value="3.278698017402039" />
-      <entry key="D1" value="6.156372897726772" />
-      <entry key="W1" value="6.872392952314704" />
+      <entry key="S2" value="1.0822824777802511E-138" />
+      <entry key="S5" value="6.512327771863691E-56" />
+      <entry key="S10" value="2.5519262865262503E-28" />
+      <entry key="S30" value="6.342922062997915E-10" />
+      <entry key="S60" value="2.518515845294174E-5" />
+      <entry key="M2" value="0.0050184816880149774" />
+      <entry key="M5" value="0.12028983731160177" />
+      <entry key="M10" value="0.3468282533352797" />
+      <entry key="M15" value="0.4936392068439446" />
+      <entry key="M30" value="0.7025946248327999" />
+      <entry key="H1" value="0.838209177253982" />
+      <entry key="H2" value="0.9155376438213734" />
+      <entry key="H4" value="0.9568375085595011" />
+      <entry key="D1" value="1.3774438624383214" />
+      <entry key="W1" value="5.623722780278849" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.9339144043248793" />
-      <entry key="MS500" value="4.008865116053564" />
-      <entry key="S2" value="10.72201282586116" />
-      <entry key="S5" value="22.562322490556518" />
-      <entry key="S10" value="33.18845708919977" />
-      <entry key="S30" value="45.56604029313416" />
-      <entry key="S60" value="53.45511287286168" />
-      <entry key="M2" value="72.35461438575426" />
-      <entry key="M5" value="134.37090538401247" />
-      <entry key="M10" value="200.24847845317888" />
-      <entry key="M15" value="235.6415722356235" />
-      <entry key="M30" value="284.1001415157608" />
-      <entry key="H1" value="330.96462480770754" />
-      <entry key="H2" value="400.51799382226267" />
-      <entry key="H4" value="486.35295506589637" />
-      <entry key="D1" value="630.183499630591" />
-      <entry key="W1" value="666.4999199714508" />
+      <entry key="MS100" value="1.5193021337676922" />
+      <entry key="MS500" value="4.531155796022409" />
+      <entry key="S2" value="13.619990101961427" />
+      <entry key="S5" value="24.635290047070335" />
+      <entry key="S10" value="33.60932317440507" />
+      <entry key="S30" value="48.325828595955635" />
+      <entry key="S60" value="65.46204735424564" />
+      <entry key="M2" value="90.20295673959829" />
+      <entry key="M5" value="140.57990748957658" />
+      <entry key="M10" value="187.32816162865305" />
+      <entry key="M15" value="212.14791198453293" />
+      <entry key="M30" value="244.64261816576055" />
+      <entry key="H1" value="264.70857331964805" />
+      <entry key="H2" value="275.91295389789633" />
+      <entry key="H4" value="281.8409339751729" />
+      <entry key="D1" value="326.78371713912264" />
+      <entry key="W1" value="741.0865917708243" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -110,6 +118,8 @@
     &quot;Python.changing_class.executor&quot;: &quot;Run&quot;,
     &quot;Python.comparison.executor&quot;: &quot;Run&quot;,
     &quot;Python.convert_to_txt.executor&quot;: &quot;Run&quot;,
+    &quot;Python.converter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.debugging_masks.executor&quot;: &quot;Run&quot;,
     &quot;Python.empty_masks.executor&quot;: &quot;Run&quot;,
     &quot;Python.merge_YOLO_boxes.executor&quot;: &quot;Run&quot;,
     &quot;Python.oversampling.executor&quot;: &quot;Run&quot;,
@@ -132,7 +142,7 @@
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;paper&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/04_Evaluation_Dataset&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/04_Evaluation_Dataset/comfyUI_workflows&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -142,6 +152,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/comfyUI_workflows" />
       <recent name="$PROJECT_DIR$/src/Foundation" />
       <recent name="$PROJECT_DIR$/src/04_evaluation_dataset" />
       <recent name="$PROJECT_DIR$/src" />
@@ -157,7 +168,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-50341a9f1f9c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.26222.68" />
+        <option value="bundled-python-sdk-6fa658e1df1a-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.8665.369" />
       </set>
     </attachedChunks>
   </component>
@@ -305,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784546365649</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added random seed experiments">
+      <option name="closed" value="true" />
+      <created>1784549029569</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1784549029569</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,7 +348,8 @@
     <MESSAGE value="refactoring" />
     <MESSAGE value="debugging" />
     <MESSAGE value="added DINOv3" />
-    <option name="LAST_COMMIT_MESSAGE" value="added DINOv3" />
+    <MESSAGE value="added random seed experiments" />
+    <option name="LAST_COMMIT_MESSAGE" value="added random seed experiments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

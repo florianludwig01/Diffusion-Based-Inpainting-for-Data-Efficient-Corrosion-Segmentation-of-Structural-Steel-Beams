@@ -7,7 +7,7 @@ import yaml
 # Einstellungen
 # =========================
 dataset_root = Path(
-    "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/03_Synth_FLUX/02_Synth_FLUX_x10"
+    "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/04_Synth_Jugger"
 )
 
 images_dir = dataset_root / "images"
@@ -18,7 +18,7 @@ out_dir = dataset_root / "yolo_split"
 train_ratio = 0.8
 seed = 42
 
-class_names = ["rust"]  # anpassen, falls Klasse anders heißt
+class_names = ["corrosion"]  # anpassen, falls Klasse anders heißt
 
 # =========================
 # Split-Ordner erzeugen

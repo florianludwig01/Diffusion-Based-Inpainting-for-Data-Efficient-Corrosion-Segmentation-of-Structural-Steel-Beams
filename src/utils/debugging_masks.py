@@ -10,7 +10,7 @@ import numpy as np
 # ============================================================
 
 DATASET_DIR = Path(
-    "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/03_Synth_FLUX"
+    "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/04_Synth_Jugger"
 )
 
 IMAGE_DIR = DATASET_DIR / "images"
