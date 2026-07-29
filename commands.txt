@@ -2,12 +2,17 @@ pixi run python3 src/main.py \
     --mode train \
     --model dino \
     --dino_model dinov3 \
-    --dataset_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/03_Synth_FLUX/02_Synth_FLUX_x10 \
-    --dataset SFx10 \
+    --dataset_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/02_Literaturdatensaetze/Corrosion/Pretraining \
+    --dataset R1 \
     --epochs 40 \
     --batch_size 4 \
     --img_size 518 \
-    --freeze_encoder
+    --freeze_encoder \
+    --early_stopping_patience 10 \
+    --early_stopping_min_delta 0.0001 \
+    --lr_scheduler_patience 5 \
+    --lr_scheduler_factor 0.5 \
+    --min_lr 0.000001
 
 pixi run python3 src/main.py \
     --mode train \
@@ -38,6 +43,9 @@ pixi run python3 src/main.py \
     --model_path ./output/models/dinov3/SFx10/best.pth \
     --output_dir ./output/test/dinov3/SFx10 \
     --save_predictions
+
+# TensorBoard fuer alle DINO-Seeds starten:
+pixi run tensorboard --logdir ./output/tensorboard --port 6006
 
 pixi run python3 src/main.py \
     --mode test \

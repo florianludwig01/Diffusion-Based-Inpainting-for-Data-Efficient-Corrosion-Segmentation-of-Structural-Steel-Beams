@@ -30,6 +30,11 @@ def parse_args():
 
     parser.add_argument("--lr", type=float, default=1e-4)
     parser.add_argument("--weight_decay", type=float, default=1e-4)
+    parser.add_argument("--early_stopping_patience", type=int, default=10)
+    parser.add_argument("--early_stopping_min_delta", type=float, default=1e-4)
+    parser.add_argument("--lr_scheduler_patience", type=int, default=5)
+    parser.add_argument("--lr_scheduler_factor", type=float, default=0.5)
+    parser.add_argument("--min_lr", type=float, default=1e-6)
 
     # YOLO
     parser.add_argument("--yolo_model", type=str, default="yolo26s-seg.pt")
@@ -61,18 +66,30 @@ def main():
 
             if args.model == "dino":
                 trainer = DINO_train(args)
+                trainer.train(
+                    epochs=args.epochs,
+                    batch_size=args.batch_size,
+                    num_workers=args.num_workers,
+                    LR=args.lr,
+                    weight_decay=args.weight_decay,
+                    freeze_encoder=args.freeze_encoder,
+                    early_stopping_patience=args.early_stopping_patience,
+                    early_stopping_min_delta=args.early_stopping_min_delta,
+                    lr_scheduler_patience=args.lr_scheduler_patience,
+                    lr_scheduler_factor=args.lr_scheduler_factor,
+                    min_lr=args.min_lr
+                )
             elif args.model == "yolo":
                 trainer = YOLO_train(args)
+                trainer.train(
+                    epochs=args.epochs,
+                    batch_size=args.batch_size,
+                    num_workers=args.num_workers,
+                    LR=args.lr,
+                    weight_decay=args.weight_decay
+                )
             else:
                 raise ValueError(f"Unknown model: {args.model}")
-
-            trainer.train(
-                epochs=args.epochs,
-                batch_size=args.batch_size,
-                num_workers=args.num_workers,
-                LR=args.lr,
-                weight_decay=args.weight_decay
-            )
     elif args.mode == "test":
         tester = DINO_test(args) if args.model == "dino" else YOLO_test(args)
         tester.test()
