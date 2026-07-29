@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="added random seed experiments">
-      <change afterPath="$PROJECT_DIR$/comfyUI_workflows/FLUX_corrosion_steel_beams.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/04_Evaluation_Dataset.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/evaluation_dataset.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/commands.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pixi.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pixi.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/training/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/training/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/converter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/debugging_masks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/debugging_masks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/split_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/split_data.py" afterDir="false" />
-    </list>
+    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="utils for dataset preparation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,61 +29,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.5440109790273353" />
-      <entry key="MS500" value="4.54653991634256" />
-      <entry key="S2" value="13.63145498361507" />
-      <entry key="S5" value="24.64378647265707" />
-      <entry key="S10" value="33.615215705269335" />
-      <entry key="S30" value="48.328727666037196" />
-      <entry key="S60" value="65.46403643798476" />
-      <entry key="M2" value="90.19939485510545" />
-      <entry key="M5" value="140.46109293524282" />
-      <entry key="M10" value="186.98311544903444" />
-      <entry key="M15" value="211.65604930806532" />
-      <entry key="M30" value="243.94142513644042" />
-      <entry key="H1" value="263.8712610494405" />
-      <entry key="H2" value="274.99792578579525" />
-      <entry key="H4" value="280.88436830826294" />
-      <entry key="D1" value="325.4063610690579" />
-      <entry key="W1" value="735.4629434464895" />
+      <entry key="MS100" value="1.001742685325721" />
+      <entry key="MS500" value="1.4043140854343452" />
+      <entry key="S2" value="3.0778612361494773" />
+      <entry key="S5" value="4.940883829111799" />
+      <entry key="S10" value="6.248728101794047" />
+      <entry key="S30" value="9.898462220393258" />
+      <entry key="S60" value="13.899123113913788" />
+      <entry key="M2" value="19.63108520361482" />
+      <entry key="M5" value="52.071070799539875" />
+      <entry key="M10" value="110.34439104935949" />
+      <entry key="M15" value="150.80771386631778" />
+      <entry key="M30" value="212.76647158024755" />
+      <entry key="H1" value="255.78245004434353" />
+      <entry key="H2" value="281.3024397170765" />
+      <entry key="H4" value="295.2273796131102" />
+      <entry key="D1" value="346.7147223445204" />
+      <entry key="W1" value="757.91724670188" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="1.0822824777802511E-138" />
-      <entry key="S5" value="6.512327771863691E-56" />
-      <entry key="S10" value="2.5519262865262503E-28" />
-      <entry key="S30" value="6.342922062997915E-10" />
-      <entry key="S60" value="2.518515845294174E-5" />
-      <entry key="M2" value="0.0050184816880149774" />
-      <entry key="M5" value="0.12028983731160177" />
-      <entry key="M10" value="0.3468282533352797" />
-      <entry key="M15" value="0.4936392068439446" />
-      <entry key="M30" value="0.7025946248327999" />
-      <entry key="H1" value="0.838209177253982" />
-      <entry key="H2" value="0.9155376438213734" />
-      <entry key="H4" value="0.9568375085595011" />
-      <entry key="D1" value="1.3774438624383214" />
-      <entry key="W1" value="5.623722780278849" />
+      <entry key="S2" value="6.239932372365931E-236" />
+      <entry key="S5" value="8.280793470867818E-95" />
+      <entry key="S10" value="9.099886521747274E-48" />
+      <entry key="S30" value="2.0877508004113477E-16" />
+      <entry key="S60" value="1.444905118134515E-8" />
+      <entry key="M2" value="1.2020420617160243E-4" />
+      <entry key="M5" value="0.027037583014879803" />
+      <entry key="M10" value="0.16443108895485553" />
+      <entry key="M15" value="0.3001391318158919" />
+      <entry key="M30" value="0.5478495521727575" />
+      <entry key="H1" value="0.7401685971268678" />
+      <entry key="H2" value="0.8603305162127385" />
+      <entry key="H4" value="0.9275402242639103" />
+      <entry key="D1" value="1.3703231723443896" />
+      <entry key="W1" value="5.619560433702705" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.5193021337676922" />
-      <entry key="MS500" value="4.531155796022409" />
-      <entry key="S2" value="13.619990101961427" />
-      <entry key="S5" value="24.635290047070335" />
-      <entry key="S10" value="33.60932317440507" />
-      <entry key="S30" value="48.325828595955635" />
-      <entry key="S60" value="65.46204735424564" />
-      <entry key="M2" value="90.20295673959829" />
-      <entry key="M5" value="140.57990748957658" />
-      <entry key="M10" value="187.32816162865305" />
-      <entry key="M15" value="212.14791198453293" />
-      <entry key="M30" value="244.64261816576055" />
-      <entry key="H1" value="264.70857331964805" />
-      <entry key="H2" value="275.91295389789633" />
-      <entry key="H4" value="281.8409339751729" />
-      <entry key="D1" value="326.78371713912264" />
-      <entry key="W1" value="741.0865917708243" />
+      <entry key="MS100" value="0.9879512706627189" />
+      <entry key="MS500" value="1.400258827356464" />
+      <entry key="S2" value="3.075400211298377" />
+      <entry key="S5" value="4.93926894450429" />
+      <entry key="S10" value="6.247699128531841" />
+      <entry key="S30" value="9.897881459450506" />
+      <entry key="S60" value="13.89869425325639" />
+      <entry key="M2" value="19.630893184815587" />
+      <entry key="M5" value="52.0976443893272" />
+      <entry key="M10" value="110.50790681000122" />
+      <entry key="M15" value="151.1067248773112" />
+      <entry key="M30" value="213.31320373633127" />
+      <entry key="H1" value="256.52181425915694" />
+      <entry key="H2" value="282.1622852024296" />
+      <entry key="H4" value="296.1546531988256" />
+      <entry key="D1" value="348.0849576571024" />
+      <entry key="W1" value="763.5367326602566" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -324,7 +311,23 @@
       <option name="project" value="LOCAL" />
       <updated>1784549029569</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="added tensorboard logging and learning rate scheduling/early stopping">
+      <option name="closed" value="true" />
+      <created>1785323563232</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1785323563232</updated>
+    </task>
+    <task id="LOCAL-00020" summary="utils for dataset preparation">
+      <option name="closed" value="true" />
+      <created>1785323631105</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1785323631105</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +352,9 @@
     <MESSAGE value="debugging" />
     <MESSAGE value="added DINOv3" />
     <MESSAGE value="added random seed experiments" />
-    <option name="LAST_COMMIT_MESSAGE" value="added random seed experiments" />
+    <MESSAGE value="added tensorboard logging and learning rate scheduling/early stopping" />
+    <MESSAGE value="utils for dataset preparation" />
+    <option name="LAST_COMMIT_MESSAGE" value="utils for dataset preparation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
