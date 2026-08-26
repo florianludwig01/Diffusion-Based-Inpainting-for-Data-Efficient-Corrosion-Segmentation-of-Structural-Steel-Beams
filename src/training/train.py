@@ -3,6 +3,9 @@ from models.dino import DINOv2RustSegmenter, DINOv3RustSegmenter
 from loss_metrices.loss import combined_loss
 from loss_metrices.metrices import rust_iou_from_logits
 
+
+EXPERIMENT_SEEDS = [42, 123, 456, 789, 1024, 2024, 31415, 27182, 65537, 99991]
+
 from tqdm import tqdm
 import torch
 from torch.utils.data import DataLoader
@@ -252,7 +255,7 @@ class YOLO_train:
 
         self.project_dir = self.output_dir / "YOLO"
         self.model_save_dir = (
-            self.output_dir / "models" / "yolo_rust_seg" / self.dataset / f"seed_{self.seed}"
+            self.output_dir / "models" / "yolo" / self.dataset / f"seed_{self.seed}"
         )
 
         self.project_dir.mkdir(parents=True, exist_ok=True)
@@ -291,3 +294,36 @@ class YOLO_train:
 
         best_dst = self.model_save_dir / f"best.pt"
         shutil.copy2(model.trainer.best, best_dst)
+
+
+def run_training(args):
+    for run_number, seed in enumerate(EXPERIMENT_SEEDS, start=1):
+        args.seed = seed
+        print(f"\nRun {run_number}/{len(EXPERIMENT_SEEDS)} | Seed: {seed}")
+
+        if args.model == "dino":
+            trainer = DINO_train(args)
+            trainer.train(
+                epochs=args.epochs,
+                batch_size=args.batch_size,
+                num_workers=args.num_workers,
+                LR=args.lr,
+                weight_decay=args.weight_decay,
+                freeze_encoder=args.freeze_encoder,
+                early_stopping_patience=args.early_stopping_patience,
+                early_stopping_min_delta=args.early_stopping_min_delta,
+                lr_scheduler_patience=args.lr_scheduler_patience,
+                lr_scheduler_factor=args.lr_scheduler_factor,
+                min_lr=args.min_lr,
+            )
+        elif args.model == "yolo":
+            trainer = YOLO_train(args)
+            trainer.train(
+                epochs=args.epochs,
+                batch_size=args.batch_size,
+                num_workers=args.num_workers,
+                LR=args.lr,
+                weight_decay=args.weight_decay,
+            )
+        else:
+            raise ValueError(f"Unknown model: {args.model}")

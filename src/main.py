@@ -1,10 +1,7 @@
 import argparse
 
-from training.train import DINO_train, YOLO_train
-from testing.test import DINO_test, YOLO_test
-
-
-EXPERIMENT_SEEDS = [42, 123, 456, 789, 1024, 2024, 31415, 27182, 65537, 99991,]
+from testing.seed_evaluation import run_test
+from training.train import run_training
 
 
 def parse_args():
@@ -18,6 +15,16 @@ def parse_args():
     parser.add_argument("--test_dir", type=str, default="/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/01_eigener_Datensatz/Validierung Rost")
     parser.add_argument("--output_dir", type=str, default="./output")
     parser.add_argument("--model_path", type=str)
+    parser.add_argument(
+        "--models_dir",
+        type=str,
+        help="Verzeichnis mit seed_*/best.pth bzw. seed_*/best.pt",
+    )
+    parser.add_argument(
+        "--all_seeds",
+        action="store_true",
+        help="Alle Seed-Modelle unter --models_dir testen und aggregieren",
+    )
 
     # Dataset name
     parser.add_argument("--dataset", type=str, default="R1")
@@ -60,39 +67,9 @@ def main():
     args = parse_args()
 
     if args.mode == "train":
-        for run_number, seed in enumerate(EXPERIMENT_SEEDS, start=1):
-            args.seed = seed
-            print(f"\nRun {run_number}/{len(EXPERIMENT_SEEDS)} | Seed: {seed}")
-
-            if args.model == "dino":
-                trainer = DINO_train(args)
-                trainer.train(
-                    epochs=args.epochs,
-                    batch_size=args.batch_size,
-                    num_workers=args.num_workers,
-                    LR=args.lr,
-                    weight_decay=args.weight_decay,
-                    freeze_encoder=args.freeze_encoder,
-                    early_stopping_patience=args.early_stopping_patience,
-                    early_stopping_min_delta=args.early_stopping_min_delta,
-                    lr_scheduler_patience=args.lr_scheduler_patience,
-                    lr_scheduler_factor=args.lr_scheduler_factor,
-                    min_lr=args.min_lr
-                )
-            elif args.model == "yolo":
-                trainer = YOLO_train(args)
-                trainer.train(
-                    epochs=args.epochs,
-                    batch_size=args.batch_size,
-                    num_workers=args.num_workers,
-                    LR=args.lr,
-                    weight_decay=args.weight_decay
-                )
-            else:
-                raise ValueError(f"Unknown model: {args.model}")
+        run_training(args)
     elif args.mode == "test":
-        tester = DINO_test(args) if args.model == "dino" else YOLO_test(args)
-        tester.test()
+        run_test(args)
 
 
 if __name__ == "__main__":

@@ -2,8 +2,8 @@ pixi run python3 src/main.py \
     --mode train \
     --model dino \
     --dino_model dinov3 \
-    --dataset_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/02_Literaturdatensaetze/Corrosion/Pretraining \
-    --dataset R1 \
+    --dataset_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/07_Real_Train_R1650 \
+    --dataset R1650 \
     --epochs 40 \
     --batch_size 4 \
     --img_size 518 \
@@ -17,7 +17,7 @@ pixi run python3 src/main.py \
 pixi run python3 src/main.py \
     --mode train \
     --model dino \
-    --dataset_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/03_Synth_FLUX \
+    --dataset_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/04_Hybrid_Flux_x1 \
     --dataset SFx1 \
     --epochs 20 \
     --batch_size 2 \
@@ -27,9 +27,9 @@ pixi run python3 src/main.py \
 pixi run python3 src/main.py \
     --mode train \
     --model yolo \
-    --dataset_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/01_Hybrid_Flux_x1 \
-    --dataset HFx1 \
-    --epochs 50 \
+    --dataset_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/05_Hybrid_Jugger_x1 \
+    --dataset HSDx1 \
+    --epochs 40 \
     --batch_size 2 \
     --num_workers 0 \
     --img_size 512
@@ -39,7 +39,7 @@ pixi run python3 src/main.py \
     --model dino \
     --dino_model dinov3 \
     --dataset SFx10 \
-    --test_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/02_Testdaten \
+    --test_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/0_Test_Data_Real \
     --model_path ./output/models/dinov3/SFx10/best.pth \
     --output_dir ./output/test/dinov3/SFx10 \
     --save_predictions
@@ -55,3 +55,23 @@ pixi run python3 src/main.py \
     --output_dir ./output/test/yolo_rust_seg/HFx1 \
     --img_size 512 \
     --save_predictions
+
+pixi run python3 src/main.py \
+    --mode test \
+    --model dino \
+    --dino_model dinov3 \
+    --dataset R1650 \
+    --test_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/00_Test_Data_Real \
+    --models_dir ./output/models/dinov3/R1650 \
+    --all_seeds \
+    --output_dir ./output/test/dinov3/R1650
+
+pixi run python3 src/main.py \
+    --mode test \
+    --model yolo \
+    --dataset R1500 \
+    --test_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/00_Test_Data_Real \
+    --models_dir ./output/models/yolo/R1500 \
+    --all_seeds \
+    --img_size 512 \
+    --output_dir ./output/test/yolo/R1500

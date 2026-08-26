@@ -210,6 +210,7 @@ class DINO_test:
         print("\nBest DINO result:")
         print(best)
         print(f"\nCSV gespeichert: {self.summary_csv}")
+        return df
 
 
 class YOLO_test:
@@ -382,3 +383,4 @@ class YOLO_test:
         print("\nBest YOLO result:")
         print(best)
         print(f"\nCSV gespeichert: {self.summary_csv}")
+        return df
