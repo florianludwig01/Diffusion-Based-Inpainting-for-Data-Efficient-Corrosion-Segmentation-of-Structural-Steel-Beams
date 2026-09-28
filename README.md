@@ -1,6 +1,6 @@
-# Evaluation Dataset
+# Diffusion-Based Inpainting for Data-Efficient Corrosion Segmentation of Structural Steel Beams
 
-Training and evaluation of DINOv3 and YOLO segmentation models for rust detection.
+Training and evaluation of DINOv3 and YOLO segmentation models for data-efficient corrosion segmentation of structural steel beams.
 
 ## Setup
 
