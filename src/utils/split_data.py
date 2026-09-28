@@ -3,9 +3,6 @@ import random
 import shutil
 import yaml
 
-# =========================
-# Einstellungen
-# =========================
 dataset_root = Path(
     "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/04_Synth_Jugger"
 )
@@ -18,11 +15,8 @@ out_dir = dataset_root / "yolo_split"
 train_ratio = 0.8
 seed = 42
 
-class_names = ["corrosion"]  # anpassen, falls Klasse anders heißt
+class_names = ["corrosion"]  
 
-# =========================
-# Split-Ordner erzeugen
-# =========================
 for split in ["train", "val"]:
     (out_dir / "images" / split).mkdir(parents=True, exist_ok=True)
     (out_dir / "labels" / split).mkdir(parents=True, exist_ok=True)
@@ -55,9 +49,6 @@ def copy_pairs(pairs, split):
 copy_pairs(train_pairs, "train")
 copy_pairs(val_pairs, "val")
 
-# =========================
-# data.yaml erzeugen
-# =========================
 data_yaml = {
     "path": str(out_dir.resolve()),
     "train": "images/train",
