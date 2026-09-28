@@ -1,7 +1,7 @@
 import argparse
 
-from training.train import DINO_train, YOLO_train
-from testing.test import DINO_test, YOLO_test
+from testing.seed_evaluation import run_test
+from training.train import run_training
 
 
 def parse_args():
@@ -15,6 +15,16 @@ def parse_args():
     parser.add_argument("--test_dir", type=str, default="/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/01_eigener_Datensatz/Validierung Rost")
     parser.add_argument("--output_dir", type=str, default="./output")
     parser.add_argument("--model_path", type=str)
+    parser.add_argument(
+        "--models_dir",
+        type=str,
+        help="Verzeichnis mit seed_*/best.pth bzw. seed_*/best.pt",
+    )
+    parser.add_argument(
+        "--all_seeds",
+        action="store_true",
+        help="Alle Seed-Modelle unter --models_dir testen und aggregieren",
+    )
 
     # Dataset name
     parser.add_argument("--dataset", type=str, default="R1")
@@ -27,11 +37,16 @@ def parse_args():
 
     parser.add_argument("--lr", type=float, default=1e-4)
     parser.add_argument("--weight_decay", type=float, default=1e-4)
+    parser.add_argument("--early_stopping_patience", type=int, default=10)
+    parser.add_argument("--early_stopping_min_delta", type=float, default=1e-4)
+    parser.add_argument("--lr_scheduler_patience", type=int, default=5)
+    parser.add_argument("--lr_scheduler_factor", type=float, default=0.5)
+    parser.add_argument("--min_lr", type=float, default=1e-6)
 
     # YOLO
     parser.add_argument("--yolo_model", type=str, default="yolo26s-seg.pt")
     # DINO
-    parser.add_argument("--dino_model", type=str, default="facebook/dinov2-base")
+    parser.add_argument("--dino_model", type=str, default="dinov3")
 
     parser.add_argument("--freeze_encoder", action="store_true")
     parser.add_argument("--save_predictions", action="store_true")
@@ -52,23 +67,9 @@ def main():
     args = parse_args()
 
     if args.mode == "train":
-        if args.model == "dino":
-            trainer = DINO_train(args)
-        elif args.model == "yolo":
-            trainer = YOLO_train(args)
-        else:
-            raise ValueError(f"Unknown model: {args.model}")
-
-        trainer.train(
-            epochs=args.epochs,
-            batch_size=args.batch_size,
-            num_workers=args.num_workers,
-            LR=args.lr,
-            weight_decay=args.weight_decay
-        )
+        run_training(args)
     elif args.mode == "test":
-        tester = DINO_test(args) if args.model == "dino" else YOLO_test(args)
-        tester.test()
+        run_test(args)
 
 
 if __name__ == "__main__":

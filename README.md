@@ -1,93 +1,152 @@
-# Evaluation_synthetics_dataset
+# Evaluation Dataset
 
+Training and evaluation of DINOv3 and YOLO segmentation models for rust detection.
 
+## Setup
 
-## Getting started
+Run all commands from the project root. Install the environment with:
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.wmaut.de/florian.ludwig/evaluation_synthetics_dataset.git
-git branch -M main
-git push -uf origin main
+```bash
+pixi install
 ```
 
-## Integrate with your tools
+The commands below use project-specific absolute dataset paths. Adjust them if the datasets are stored elsewhere.
 
-- [ ] [Set up project integrations](https://gitlab.wmaut.de/florian.ludwig/evaluation_synthetics_dataset/-/settings/integrations)
+## Train DINOv3
 
-## Collaborate with your team
+```bash
+pixi run python3 src/main.py \
+    --mode train \
+    --model dino \
+    --dino_model dinov3 \
+    --dataset_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/02_Synth_FLUX_SF/01_Synth_FLUX_SFx1 \
+    --dataset SFx1 \
+    --epochs 30 \
+    --batch_size 4 \
+    --img_size 518 \
+    --freeze_encoder \
+    --early_stopping_patience 10 \
+    --early_stopping_min_delta 0.0001 \
+    --lr_scheduler_patience 5 \
+    --lr_scheduler_factor 0.5 \
+    --min_lr 0.000001
+```
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+Remove `--freeze_encoder` to fine-tune the encoder as well.
 
-## Test and Deploy
+## Train YOLO
 
-Use the built-in continuous integration in GitLab.
+```bash
+pixi run python3 src/main.py \
+    --mode train \
+    --model yolo \
+    --dataset_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/02_Synth_FLUX_SF/01_Synth_FLUX_SFx1 \
+    --dataset SFx1 \
+    --epochs 20 \
+    --batch_size 2 \
+    --num_workers 0 \
+    --img_size 512
+```
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+The default YOLO checkpoint is `yolo26s-seg.pt`. Select another checkpoint with `--yolo_model`.
 
-***
+## Test one DINOv3 model
 
-# Editing this README
+```bash
+pixi run python3 src/main.py \
+    --mode test \
+    --model dino \
+    --dino_model dinov3 \
+    --dataset R1 \
+    --test_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/00_Test_Data_Real \
+    --model_path ./output/models/dinov3/R1/seed_42/best.pth \
+    --output_dir ./output/test/dinov3/R1/seed_42 \
+    --save_predictions
+```
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+## Test one YOLO model
 
-## Suggestions for a good README
+```bash
+pixi run python3 src/main.py \
+    --mode test \
+    --model yolo \
+    --dataset R1 \
+    --test_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/00_Test_Data_Real \
+    --model_path ./output/models/yolo/R1/seed_42/best.pt \
+    --output_dir ./output/test/yolo/R1/seed_42 \
+    --img_size 512 \
+    --save_predictions
+```
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+## Evaluate all seeds
 
-## Name
-Choose a self-explaining name for your project.
+The model directory must have the following structure:
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+```text
+output/models/<model>/<dataset>/
+├── seed_42/best.pth
+├── seed_123/best.pth
+└── ...
+```
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+YOLO models use `best.pt` instead of `best.pth`.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+### DINOv3
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+```bash
+pixi run python3 src/main.py \
+    --mode test \
+    --model dino \
+    --dino_model dinov3 \
+    --dataset R1 \
+    --test_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/00_Test_Data_Real \
+    --models_dir ./output/models/dinov3/R1 \
+    --all_seeds \
+    --output_dir ./output/test/dinov3/R1
+```
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+### YOLO
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+```bash
+pixi run python3 src/main.py \
+    --mode test \
+    --model yolo \
+    --dataset R1 \
+    --test_dir /home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/05_Paper/00_Test_Data_Real \
+    --models_dir ./output/models/yolo/R1 \
+    --all_seeds \
+    --img_size 512 \
+    --output_dir ./output/test/yolo/R1
+```
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+The multi-seed evaluation writes individual seed results as well as the aggregated files `all_seed_results.csv`, `seed_statistics.csv`, `metric_threshold_curves.png`, and `metric_seed_distributions.png`.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+## Select thresholds
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+Testing uses a predefined threshold list. Override it with, for example:
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+```bash
+--thresholds 0.1 0.2 0.3 0.4 0.5
+```
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+Append this option to any test command.
 
-## License
-For open source projects, say how it is licensed.
+## TensorBoard
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Start TensorBoard for the DINO training logs:
+
+```bash
+pixi run tensorboard --logdir ./output/tensorboard --port 6006
+```
+
+Then open <http://localhost:6006>.
+
+## Command-line help
+
+Display every available option and its default value:
+
+```bash
+pixi run python3 src/main.py --help
+```
+
+When splitting a command across several lines, every continued line except the last must end with `\`. There must be no spaces after it.

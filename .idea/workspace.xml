@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="refactoring">
+    <list default="true" id="17bffd70-4b5b-4d4e-ba9e-55760268a6d6" name="Changes" comment="added planned experiments">
+      <change beforePath="$PROJECT_DIR$/.idea/evaluation_dataset.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/evaluation_dataset.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/commands.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/planned_experiments.ods" beforeDir="false" afterPath="$PROJECT_DIR$/output/planned_experiments.ods" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pixi.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pixi.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/testing/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/testing/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/training/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/training/train.py" afterDir="false" />
     </list>
@@ -14,6 +20,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="2146" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -28,6 +37,65 @@
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.9133835886276012" />
+      <entry key="MS500" value="4.6613585272277565" />
+      <entry key="S2" value="11.829154429431357" />
+      <entry key="S5" value="20.849483029929758" />
+      <entry key="S10" value="31.580820941909685" />
+      <entry key="S30" value="58.20413444886581" />
+      <entry key="S60" value="76.26469777614984" />
+      <entry key="M2" value="95.25771453752078" />
+      <entry key="M5" value="119.8042695546513" />
+      <entry key="M10" value="162.5859266246364" />
+      <entry key="M15" value="233.6988387865167" />
+      <entry key="M30" value="466.00861320200255" />
+      <entry key="H1" value="756.7030100488184" />
+      <entry key="H2" value="1000.1208303434914" />
+      <entry key="H4" value="1210.4139287852674" />
+      <entry key="D1" value="2162.68504649832" />
+      <entry key="W1" value="3090.9471689275993" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="1.4556879446100902E-205" />
+      <entry key="M5" value="1.1620566869836793E-82" />
+      <entry key="M10" value="1.0779873315506561E-41" />
+      <entry key="M15" value="4.879879575467796E-28" />
+      <entry key="M30" value="2.2090449464570122E-14" />
+      <entry key="H1" value="1.486285620752945E-7" />
+      <entry key="H2" value="3.855237503388232E-4" />
+      <entry key="H4" value="0.01963476273887122" />
+      <entry key="D1" value="0.7207287048670743" />
+      <entry key="W1" value="5.126699845546347" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.8839766429183507" />
+      <entry key="MS500" value="4.647936577028344" />
+      <entry key="S2" value="11.820912480971442" />
+      <entry key="S5" value="20.843649575356984" />
+      <entry key="S10" value="31.576426340243994" />
+      <entry key="S30" value="58.20150174573328" />
+      <entry key="S60" value="76.26299242839053" />
+      <entry key="M2" value="95.25665838607" />
+      <entry key="M5" value="119.80374086694036" />
+      <entry key="M10" value="162.58556260963047" />
+      <entry key="M15" value="233.69848289911118" />
+      <entry key="M30" value="466.00824700316673" />
+      <entry key="H1" value="756.7027068901082" />
+      <entry key="H2" value="1000.121011717194" />
+      <entry key="H4" value="1210.4334291716889" />
+      <entry key="D1" value="2163.4056791985954" />
+      <entry key="W1" value="3096.0737911440724" />
+    </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1,
@@ -48,6 +116,8 @@
     &quot;Python.changing_class.executor&quot;: &quot;Run&quot;,
     &quot;Python.comparison.executor&quot;: &quot;Run&quot;,
     &quot;Python.convert_to_txt.executor&quot;: &quot;Run&quot;,
+    &quot;Python.converter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.debugging_masks.executor&quot;: &quot;Run&quot;,
     &quot;Python.empty_masks.executor&quot;: &quot;Run&quot;,
     &quot;Python.merge_YOLO_boxes.executor&quot;: &quot;Run&quot;,
     &quot;Python.oversampling.executor&quot;: &quot;Run&quot;,
@@ -70,32 +140,35 @@
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;paper&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/04_Evaluation_Dataset/src/Foundation&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/04_Evaluation_Dataset/comfyUI_workflows&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/comfyUI_workflows" />
       <recent name="$PROJECT_DIR$/src/Foundation" />
       <recent name="$PROJECT_DIR$/src/04_evaluation_dataset" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/output/models/yolo" />
+      <recent name="$PROJECT_DIR$/output/test/yolo_rust_seg/R1" />
+      <recent name="$PROJECT_DIR$/src/utils" />
       <recent name="$PROJECT_DIR$/results/real_synthx5" />
       <recent name="$PROJECT_DIR$/results/real_only" />
-      <recent name="$PROJECT_DIR$/results" />
-      <recent name="$PROJECT_DIR$/src/anomalib/patchcore" />
-      <recent name="$PROJECT_DIR$/src/anomalib/fastflow" />
     </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-50341a9f1f9c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.26222.68" />
+        <option value="bundled-python-sdk-6fa658e1df1a-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.8665.369" />
       </set>
     </attachedChunks>
   </component>
@@ -227,7 +300,63 @@
       <option name="project" value="LOCAL" />
       <updated>1783325954261</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="debugging">
+      <option name="closed" value="true" />
+      <created>1783348327677</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1783348327677</updated>
+    </task>
+    <task id="LOCAL-00017" summary="added DINOv3">
+      <option name="closed" value="true" />
+      <created>1784546365649</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1784546365649</updated>
+    </task>
+    <task id="LOCAL-00018" summary="added random seed experiments">
+      <option name="closed" value="true" />
+      <created>1784549029569</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1784549029569</updated>
+    </task>
+    <task id="LOCAL-00019" summary="added tensorboard logging and learning rate scheduling/early stopping">
+      <option name="closed" value="true" />
+      <created>1785323563232</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1785323563232</updated>
+    </task>
+    <task id="LOCAL-00020" summary="utils for dataset preparation">
+      <option name="closed" value="true" />
+      <created>1785323631105</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1785323631105</updated>
+    </task>
+    <task id="LOCAL-00021" summary="added Juggernaut Comfy workflow">
+      <option name="closed" value="true" />
+      <created>1785323892886</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1785323892886</updated>
+    </task>
+    <task id="LOCAL-00022" summary="added planned experiments">
+      <option name="closed" value="true" />
+      <created>1785325808643</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1785325808643</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,7 +378,14 @@
     <MESSAGE value="training extended with synthetic data" />
     <MESSAGE value="evaluating" />
     <MESSAGE value="refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
+    <MESSAGE value="debugging" />
+    <MESSAGE value="added DINOv3" />
+    <MESSAGE value="added random seed experiments" />
+    <MESSAGE value="added tensorboard logging and learning rate scheduling/early stopping" />
+    <MESSAGE value="utils for dataset preparation" />
+    <MESSAGE value="added Juggernaut Comfy workflow" />
+    <MESSAGE value="added planned experiments" />
+    <option name="LAST_COMMIT_MESSAGE" value="added planned experiments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -7,7 +7,7 @@ from PIL import Image
 from tqdm import tqdm
 from ultralytics import YOLO
 
-from models.dino import DINOv2RustSegmenter
+from models.dino import DINOv2RustSegmenter, DINOv3RustSegmenter
 from data.mask_converter import yolo_seg_to_mask
 
 
@@ -39,6 +39,7 @@ class DINO_test:
     def __init__(self, args):
         self.args = args
         self.model_path = args.model_path
+        self.dino_model = args.dino_model
         self.test_dir = args.test_dir
         self.image_dir = os.path.join(self.test_dir, "images")
         self.label_dir = os.path.join(self.test_dir, "labels")
@@ -105,10 +106,14 @@ class DINO_test:
 
         checkpoint = torch.load(self.model_path, map_location=self.device)
 
-        model = DINOv2RustSegmenter(
-            model_name=checkpoint["model_name"],
-            freeze_encoder=False
-        ).to(self.device)
+        if self.dino_model == "dinov2":
+            model = DINOv2RustSegmenter(
+                freeze_encoder=False
+            ).to(self.device)
+        elif self.dino_model == "dinov3":
+            model = DINOv3RustSegmenter(freeze_encoder=False).to(self.device)
+        else:
+            raise NotImplementedError
 
         model.load_state_dict(checkpoint["model_state_dict"])
         model.eval()
@@ -205,6 +210,7 @@ class DINO_test:
         print("\nBest DINO result:")
         print(best)
         print(f"\nCSV gespeichert: {self.summary_csv}")
+        return df
 
 
 class YOLO_test:
@@ -377,3 +383,4 @@ class YOLO_test:
         print("\nBest YOLO result:")
         print(best)
         print(f"\nCSV gespeichert: {self.summary_csv}")
+        return df
