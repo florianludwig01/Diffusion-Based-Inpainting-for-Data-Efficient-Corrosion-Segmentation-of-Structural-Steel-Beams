@@ -5,7 +5,7 @@ from training.train import run_training
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Rust Segmentation Training")
+    parser = argparse.ArgumentParser(description="Corrosion Segmentation Training")
 
     parser.add_argument("--mode", choices=["train", "test"], required=True)
     parser.add_argument("--model", choices=["dino", "yolo"], required=True)
@@ -18,12 +18,12 @@ def parse_args():
     parser.add_argument(
         "--models_dir",
         type=str,
-        help="Verzeichnis mit seed_*/best.pth bzw. seed_*/best.pt",
+        help="Directory with seed_*/best.pth or seed_*/best.pt",
     )
     parser.add_argument(
         "--all_seeds",
         action="store_true",
-        help="Alle Seed-Modelle unter --models_dir testen und aggregieren",
+        help="Test and aggregate all models within --models_dir",
     )
 
     # Dataset name
