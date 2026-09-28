@@ -6,10 +6,6 @@ import numpy as np
 from pathlib import Path
 
 
-# =========================
-# PFADANPASSUNG
-# =========================
-
 SYNTH_IMAGE_DIR = Path(
     "/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/"
     "03_Datasets/05_Paper/03_Synth_FLUX/images"
@@ -33,9 +29,6 @@ OUT_LABEL_DIR = Path(
 OUT_IMAGE_DIR.mkdir(parents=True, exist_ok=True)
 OUT_LABEL_DIR.mkdir(parents=True, exist_ok=True)
 
-
-# Anzahl augmentierter Bilder pro Originalbild.
-# Zusätzlich wird das Originalbild einmal kopiert.
 OVERSAMPLE_FACTOR = 10
 
 IMAGE_EXTENSIONS = {
@@ -47,22 +40,14 @@ IMAGE_EXTENSIONS = {
     ".tiff",
 }
 
-# Reproduzierbarkeit.
-# Auf None setzen, wenn jeder Durchlauf vollständig anders sein soll.
 RANDOM_SEED = 42
 
 
-# =========================
-# HILFSFUNKTIONEN
-# =========================
-
 def ensure_uint8(image):
-    """Stellt sicher, dass das Bild im uint8-Bereich liegt."""
     return np.clip(image, 0, 255).astype(np.uint8)
 
 
 def random_brightness_contrast(image):
-    """Verändert Helligkeit und Kontrast."""
     alpha = random.uniform(0.65, 1.45)
     beta = random.uniform(-45, 45)
 
@@ -71,7 +56,6 @@ def random_brightness_contrast(image):
 
 
 def random_gamma(image):
-    """Simuliert unterschiedliche Belichtung und Kameracharakteristik."""
     gamma = random.uniform(0.55, 1.8)
 
     lookup_table = np.array(
@@ -86,12 +70,6 @@ def random_gamma(image):
 
 
 def random_hsv(image):
-    """
-    Verändert Farbton, Sättigung und Helligkeit.
-
-    Der Hue-Bereich bleibt relativ klein, damit Rost nicht in komplett
-    unrealistische Farben verschoben wird.
-    """
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV).astype(np.float32)
 
     hue_shift = random.uniform(-8, 8)
@@ -107,7 +85,6 @@ def random_hsv(image):
 
 
 def random_channel_shift(image):
-    """Verschiebt die einzelnen BGR-Farbkanäle leicht."""
     shifts = np.array(
         [
             random.uniform(-20, 20),
@@ -122,7 +99,6 @@ def random_channel_shift(image):
 
 
 def random_clahe(image):
-    """Lokale Kontrastverstärkung."""
     lab = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
     lightness, channel_a, channel_b = cv2.split(lab)
 
@@ -141,7 +117,6 @@ def random_clahe(image):
 
 
 def random_gaussian_noise(image):
-    """Fügt kameratypisches gaußsches Rauschen hinzu."""
     sigma = random.uniform(2.0, 18.0)
 
     noise = np.random.normal(
@@ -155,7 +130,6 @@ def random_gaussian_noise(image):
 
 
 def random_poisson_noise(image):
-    """Fügt signalabhängiges Poisson-Rauschen hinzu."""
     image_float = image.astype(np.float32) / 255.0
     strength = random.uniform(15.0, 80.0)
 
@@ -166,7 +140,6 @@ def random_poisson_noise(image):
 
 
 def random_salt_pepper_noise(image):
-    """Fügt vereinzelte helle und dunkle Störpixel hinzu."""
     result = image.copy()
 
     probability = random.uniform(0.0002, 0.003)
@@ -189,7 +162,6 @@ def random_salt_pepper_noise(image):
 
 
 def random_blur(image):
-    """Wählt zufällig zwischen verschiedenen Unschärfearten."""
     blur_type = random.choice(
         [
             "gaussian",
@@ -220,7 +192,6 @@ def random_blur(image):
             (kernel_size, kernel_size),
         )
 
-    # Einfacher horizontaler oder vertikaler Motion Blur.
     kernel_size = random.choice([3, 5, 7, 9])
     kernel = np.zeros((kernel_size, kernel_size), dtype=np.float32)
 
@@ -235,7 +206,6 @@ def random_blur(image):
 
 
 def random_sharpen(image):
-    """Schärft das Bild unterschiedlich stark."""
     strength = random.uniform(0.3, 1.2)
 
     blurred = cv2.GaussianBlur(image, (0, 0), sigmaX=1.0)
@@ -252,7 +222,6 @@ def random_sharpen(image):
 
 
 def random_jpeg_compression(image):
-    """Simuliert JPEG-Kompressionsartefakte."""
     quality = random.randint(35, 92)
 
     success, encoded = cv2.imencode(
@@ -273,7 +242,6 @@ def random_jpeg_compression(image):
 
 
 def random_vignette(image):
-    """Verdunkelt oder erhellt den Randbereich leicht."""
     height, width = image.shape[:2]
 
     sigma_x = random.uniform(width * 0.35, width * 0.8)
@@ -288,10 +256,8 @@ def random_vignette(image):
     strength = random.uniform(0.15, 0.55)
 
     if random.random() < 0.85:
-        # Klassische Randabdunkelung.
         mask = (1.0 - strength) + strength * mask
     else:
-        # Selten eine leichte Randaufhellung.
         mask = 1.0 + strength * (1.0 - mask)
 
     result = image.astype(np.float32) * mask[:, :, np.newaxis]
@@ -299,11 +265,6 @@ def random_vignette(image):
 
 
 def random_shadow(image):
-    """
-    Erzeugt eine weiche, großflächige Schattenzone.
-
-    Die Korrosionsform selbst wird nicht verändert.
-    """
     height, width = image.shape[:2]
 
     shadow_mask = np.zeros((height, width), dtype=np.float32)
@@ -347,7 +308,6 @@ def random_shadow(image):
 
 
 def random_light_gradient(image):
-    """Simuliert ungleichmäßige Beleuchtung."""
     height, width = image.shape[:2]
 
     if random.random() < 0.5:
@@ -378,10 +338,6 @@ def random_light_gradient(image):
 
 
 def random_resolution_degradation(image):
-    """
-    Simuliert geringere Kameraauflösung, ohne die finale Bildgröße
-    zu verändern.
-    """
     height, width = image.shape[:2]
 
     scale = random.uniform(0.35, 0.85)
@@ -415,19 +371,9 @@ def random_resolution_degradation(image):
         (width, height),
         interpolation=interpolation_up,
     )
-
-
-# =========================
-# AUGMENTIERUNG
-# =========================
-
+    
 def augment_image(image):
-    """
-    Wendet mehrere zufällig ausgewählte Augmentierungen an.
 
-    Pro Bild werden mindestens zwei und höchstens sechs verschiedene
-    Operationen verwendet.
-    """
     aug = image.copy()
 
     operations = [
@@ -460,19 +406,8 @@ def augment_image(image):
         aug = operation(aug)
 
     return ensure_uint8(aug)
-
-
-# =========================
-# DATEI SCHREIBEN
-# =========================
-
+    
 def save_image(output_path, image):
-    """
-    Speichert das Bild mit passenden Parametern.
-
-    JPEG-Bilder werden mit hoher Qualität gespeichert, sofern nicht bereits
-    eine JPEG-Kompressionsaugmentation angewendet wurde.
-    """
     suffix = output_path.suffix.lower()
 
     if suffix in {".jpg", ".jpeg"}:
@@ -491,11 +426,6 @@ def save_image(output_path, image):
 
     return cv2.imwrite(str(output_path), image)
 
-
-# =========================
-# MAIN
-# =========================
-
 def main():
     if RANDOM_SEED is not None:
         random.seed(RANDOM_SEED)
@@ -503,24 +433,18 @@ def main():
 
     if not SYNTH_IMAGE_DIR.exists():
         raise FileNotFoundError(
-            f"Bildordner existiert nicht: {SYNTH_IMAGE_DIR}"
+            f"Directory not found: {SYNTH_IMAGE_DIR}"
         )
 
     if not SYNTH_LABEL_DIR.exists():
         raise FileNotFoundError(
-            f"Labelordner existiert nicht: {SYNTH_LABEL_DIR}"
+            f"Directory not fount: {SYNTH_LABEL_DIR}"
         )
 
     image_files = sorted(
         p
         for p in SYNTH_IMAGE_DIR.iterdir()
         if p.is_file() and p.suffix.lower() in IMAGE_EXTENSIONS
-    )
-
-    print(f"Gefundene synthetische Bilder: {len(image_files)}")
-    print(
-        "Geplante Ausgabemenge:",
-        len(image_files) * (OVERSAMPLE_FACTOR + 1),
     )
 
     processed_images = 0
@@ -532,7 +456,7 @@ def main():
         label_path = SYNTH_LABEL_DIR / f"{img_path.stem}.txt"
 
         if not label_path.exists():
-            print(f"Kein Label gefunden: {label_path}")
+            print(f"KLabel not found: {label_path}")
             missing_labels += 1
             continue
 
@@ -542,11 +466,10 @@ def main():
         )
 
         if image is None:
-            print(f"Bild konnte nicht geladen werden: {img_path}")
+            print(f"Image could not be loaded: {img_path}")
             failed_images += 1
             continue
-
-        # Original kopieren.
+            
         original_image_path = (
             OUT_IMAGE_DIR
             / f"{img_path.stem}_orig{img_path.suffix.lower()}"
@@ -562,11 +485,10 @@ def main():
             written_images += 1
         else:
             print(
-                "Originalbild konnte nicht gespeichert werden:",
+                "Origianl image could not be saved:",
                 original_image_path,
             )
 
-        # Augmentierte Varianten erzeugen.
         for augmentation_number in range(OVERSAMPLE_FACTOR):
             augmented_image = augment_image(image)
 
@@ -591,7 +513,7 @@ def main():
 
             if not success:
                 print(
-                    "Augmentiertes Bild konnte nicht gespeichert werden:",
+                    "Augmentated image could not be saved:",
                     augmented_image_path,
                 )
                 continue
@@ -607,18 +529,8 @@ def main():
 
         if image_number % 50 == 0 or image_number == len(image_files):
             print(
-                f"Fortschritt: {image_number}/{len(image_files)} "
-                f"Quelldateien geprüft"
+                f"Progress: {image_number}/{len(image_files)} "
             )
-
-    print("\nFertig.")
-    print(f"Verarbeitete Originalbilder: {processed_images}")
-    print(f"Fehlende Labels: {missing_labels}")
-    print(f"Nicht lesbare Bilder: {failed_images}")
-    print(f"Geschriebene Bilder: {written_images}")
-    print(f"Bildausgabe: {OUT_IMAGE_DIR}")
-    print(f"Labelausgabe: {OUT_LABEL_DIR}")
-
 
 if __name__ == "__main__":
     main()
