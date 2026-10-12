@@ -12,7 +12,7 @@ def parse_args():
 
     # Paths
     parser.add_argument("--dataset_dir", type=str)
-    parser.add_argument("--test_dir", type=str, default="/home/team_omd/omd_fl/01_Projekte/02-EvaSteel/03_Datasets/01_eigener_Datensatz/Validierung Rost")
+    parser.add_argument("--test_dir", type=str)
     parser.add_argument("--output_dir", type=str, default="./output")
     parser.add_argument("--model_path", type=str)
     parser.add_argument(
