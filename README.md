@@ -314,7 +314,7 @@ pixi run python3 src/main.py \
     --mode train \
     --model yolo \
     --dataset_dir <PATH_TO_DATASET> \
-    --dataset SFx1 \
+    --dataset Synth-FLUX \
     --epochs 20 \
     --batch_size 2 \
     --num_workers 0 \
