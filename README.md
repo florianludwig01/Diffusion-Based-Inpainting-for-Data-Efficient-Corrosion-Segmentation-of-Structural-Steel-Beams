@@ -576,15 +576,11 @@ Hossein Omid Beiki, Florian Ludwig, Patrick Dohmen, Steffen Wurm, Christian Brec
 
 ## License
 
-The original source code and ComfyUI workflows in this
-repository are licensed under the MIT License, unless
-otherwise indicated.
+The original source code and ComfyUI workflows are licensed under the [MIT License](LICENSE).
 
-See the [LICENSE](LICENSE) file for details.
+The authors' rights in the published photographs, synthetic images, and annotations are licensed under [CC BY 4.0](data/LICENSE.md). The data license also documents sources and generative model notices.
 
-Third-party models, pretrained weights, datasets, and
-software dependencies are subject to their respective
-licenses and usage conditions.
+Third-party software and model weights remain subject to their respective licenses.
 
 ## Acknowledgements
 
