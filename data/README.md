@@ -25,4 +25,8 @@ The complete source and synthetic image collections are not redistributed becaus
 
 ## Sources and licensing
 
-File-specific attribution and licensing information is provided in `sources_and_licenses.csv`. The repository's MIT license applies to the original code and workflows, not automatically to the images and annotations.
+The authors' rights in the published photographs, synthetic images, and annotations in `RTest/` and `synthetic_examples/` are licensed under CC BY 4.0.
+
+See [LICENSE.md](LICENSE.md) for attribution requirements, source information, and generative model notices.
+
+The repository's MIT license applies to the original code and workflows.
