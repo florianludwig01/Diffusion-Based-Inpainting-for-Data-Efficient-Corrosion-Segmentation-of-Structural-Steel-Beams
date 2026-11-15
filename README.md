@@ -44,8 +44,8 @@ The training and evaluation environment is managed using [Pixi](https://pixi.sh/
 Clone the repository:
 
 ```bash
-git clone <REPOSITORY_URL>
-cd <REPOSITORY_NAME>
+git clone https://github.com/florianludwig01/Diffusion-Based-Inpainting-for-Data-Efficient-Corrosion-Segmentation-of-Structural-Steel-Beams.git
+cd Diffusion-Based-Inpainting-for-Data-Efficient-Corrosion-Segmentation-of-Structural-Steel-Beams
 ```
 
 Install the environment:
@@ -90,6 +90,10 @@ A reduced subset of the real corrosion dataset containing:
 
 This subset is used to investigate segmentation performance under limited real-data availability.
 
+### Source Images for Inpainting
+
+For corrosion inpainting, 52 images of steel beams and steel structures were collected: 46 through Google Images searches and six taken in our laboratory hall. This collection is referred to as RSource. RSource was used for both inpainting workflows.
+
 ### Synthetic Corrosion Datasets
 
 Two synthetic datasets were generated using diffusion-based inpainting.
@@ -102,7 +106,7 @@ Synthetic corrosion images generated using FLUX.1 Fill Dev.
 
 Synthetic corrosion images generated using the SDXL-based Juggernaut XL v9 checkpoint.
 
-Both datasets contain synthetic corrosion introduced into images of structural steel beams without visible corrosion.
+Each synthetic dataset contains 147 images: 117 training images and 30 validation images. Corrosion was introduced into images from RSource.
 
 The generated images were manually reviewed and annotated before being used for segmentation training.
 
@@ -145,7 +149,7 @@ Two different pretrained diffusion models were investigated:
 1. FLUX.1 Fill Dev
 2. Juggernaut XL v9 (SDXL)
 
-The objective was to introduce realistic corrosion patterns into corrosion-free steel-beam images while preserving the original beam geometry, lighting, and surrounding scene.
+The objective was to introduce realistic corrosion patterns into corrosion-free steel-beam images from RSource while preserving the original beam geometry, lighting, and surrounding scene.
 
 The workflows differ in their masking strategies, prompting, and sampling configurations.
 
@@ -207,7 +211,7 @@ Please refer to the respective model providers for checkpoint availability, lice
 
 ### Annotation of Synthetic Images
 
-Four corrosion variants were generated for each input image by incrementing the random seed between generation runs.
+Multiple corrosion variants were generated for each input image by incrementing the random seed between generation runs.
 
 After generation, the synthetic images were manually reviewed.
 
@@ -263,6 +267,10 @@ Replace the dataset paths with the corresponding local directories.
 
 The dataset identifiers shown below are examples from the code interface. Refer to the experimental configurations section for the datasets used in the paper.
 
+Each training command automatically runs all ten predefined random seeds: 42, 123, 456, 789, 1024, 2024, 31415, 27182, 65537, and 99991.
+
+The `--dataset_dir` argument specifies the input dataset directory. The `--dataset` argument names the experiment output folders.
+
 ### Train DINOv3-CNN
 
 ```bash
@@ -271,7 +279,7 @@ pixi run python3 src/main.py \
     --model dino \
     --dino_model dinov3 \
     --dataset_dir <PATH_TO_DATASET> \
-    --dataset SFx1 \
+    --dataset Synth-FLUX \
     --epochs 40 \
     --batch_size 2 \
     --img_size 518 \
